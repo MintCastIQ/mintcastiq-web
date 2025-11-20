@@ -29,8 +29,6 @@ Documented environment for reproducibility:
   - Exposes API on `http://<host-ip>:9091`
 ---
 ## Connectivity
-- Host binds to `0.0.0.0` → accessible on LAN IP (e.g., `192.168.50.74:9091`)
-- VM or contributor connects via:
   ```bash
   curl http://<host-ip>:9091/benchmark
   ```
@@ -41,9 +39,13 @@ Environment reproducibility: Record GPU model, ROCm version, and PyTorch build.
 Contributor safety: No hardware requirements; CPU fallback always available.
 API contract: Endpoints documented and stable.
 ## Example Test
-### Benchmark endpoint
+### PRISM endpoint
+CPU processing will be used due to the effort level involved in aligning Ubuntu with an AMD GPU.
+
+To see the health of the endpoint or process images
 ```bash
-curl http://127.0.0.1:9091/benchmark
+curl http://mintcastiq-gpu.tail0cc642.ts.net/benchmark
+curl http://mintcastiq-gpu.tail0cc642.ts.net/process (not implemented)
 ```
 ### Expected response
 {"status":"ok","result_shape":[10000,10000]}
