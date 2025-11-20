@@ -12,7 +12,30 @@ MintCastIQ is evolving into a **web‑first platform** with a mobile companion p
 - Use imperative mood (“Add overlay pipeline”).
 - Reference issues when applicable (Fixes #42).
 ---
-## 👥 Contributor Roles
+## Contributor Roles
+
+MintCastIQ supports two primary contributor types:
+
+### 1. Code Contributors
+- **Focus:** Application logic, infrastructure, and pipeline improvements.
+- **Access:** Git repository, issue tracker, and development environment.
+- **Responsibilities:**
+  - Implement new features and bug fixes.
+  - Maintain audit‑grade commit hygiene (tags, milestones, documentation).
+  - Respect modular architecture and contributor‑safe onboarding practices.
+  - Document architectural decisions in `DEVELOPMENT_GUIDE.md`.
+
+### 2. Scan Contributors
+- **Focus:** Providing card scans for probabilistic grading and forensic validation.
+- **Access:** Upload endpoints, contributor‑safe capture pipeline, and annotation guides.
+- **Responsibilities:**
+  - Follow capture standards (lighting, orientation, resolution).
+  - Ensure each card submission includes exactly 10 hashes for deduplication.
+  - Use ergonomic UI and symbolic overlays (no autoscan defaults).
+  - Respect contributor‑safe storage practices (symlinked pipelines, audit‑grade rotation).
+
+---
+## 👥 Contributor Types (Code)
 - **External contributors (not added to repo)**:
   - Fork the repository, make changes, and open pull requests.
   - Can open issues in public repos but cannot be formally assigned to them.
