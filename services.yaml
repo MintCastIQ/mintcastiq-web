@@ -1,0 +1,35 @@
+services:
+  - name: mintcastiq-db
+    ip: 192.168.50.10
+    port: 5432
+    description: >
+      Primary database node. PostgreSQL service for card metadata and grading records.
+      Connect using psql or ORM clients. Requires authentication.
+
+  - name: mintcastiq-archive
+    ip: 192.168.50.11
+    port: 445
+    description: >
+      Archival storage node. Samba share for long-term card scans and audit logs.
+      Accessible via SMB/CIFS mounts. Contributor access is read-only.
+
+  - name: mintcastiq-gpu
+    ip: 192.168.50.16
+    port: 8081
+    description: >
+      Worker node (currently CPU-only). Flask API exposing /benchmark and /process endpoints.
+      Used for tensor operations and grading pipeline tasks.
+
+  - name: mintcastiq-web
+    ip: 192.168.50.17
+    port: 80
+    description: >
+      Frontend web server. Hosts contributor UI and routes requests to backend services.
+      Accessible via browser at http://mintcastiq-web/.
+
+  - name: mintcastiq-monitoring
+    ip: 192.168.50.21
+    port: 3000
+    description: >
+      Monitoring stack (Prometheus + Grafana). Provides dashboards for system health,
+      NVMe usage, and worker performance. Accessible via browser at http://mintcastiq-monitoring:3000.
