@@ -33,6 +33,49 @@ MintCastIQ supports two primary contributor types:
   - Ensure each card submission includes exactly 10 hashes for deduplication.
   - Use ergonomic UI and symbolic overlays (no autoscan defaults).
   - Respect contributor‑safe storage practices (symlinked pipelines, audit‑grade rotation).
+  ┌─────────────────────┐
+  │ Code Contributor    │
+  └─────────┬───────────┘
+            │
+            │
+    pushes code, docs, configs
+            ▼
+  ┌─────────────────────┐
+  │ Git Repository      │
+  │ + CI/CD Pipeline    │
+  └─────────┬───────────┘
+            │
+    deploys services
+            ▼
+  ┌─────────────────────┐
+  │ Frontend Service    │
+  │ (Flask on 8080)     │
+  └─────────┬───────────┘
+            │
+            │
+    provides capture UI
+            ▼
+  ┌─────────────────────┐
+  │ Scan Contributor    │
+  └─────────┬───────────┘
+            │
+            │
+    uploads scans + hashes
+            ▼
+  ┌─────────────────────┐
+  │ Capture Pipeline    │
+  │ (hashing, overlays  │
+  │ validation, logs)   │
+  └─────────┬───────────┘
+            │
+            │
+       validated data
+            ▼
+    ┌─────────────────────┐
+    │ Storage + Analysis  │
+    │ (audit‑grade DB )   │
+    │                     │
+    └─────────────────────┘
 
 ---
 ## 👥 Contributor Types (Code)
