@@ -33,6 +33,23 @@ Documented environment for reproducibility:
   curl http://<host-ip>:9091/benchmark
   ```
 Firewall must allow inbound traffic on chosen port.
+### mintcastiq-web systemd service
+[Unit]
+Description=MintCastIQ Frontend Web Service
+After=network.target
+
+[Service]
+User=mintcastiq
+Group=mintcastiq
+WorkingDirectory=/opt/mintcastiq-web
+ExecStart=/opt/mintcastiq-web/webvenv/bin/python /opt/mintcastiq-web/frontend.py
+Restart=always
+EnvironmentFile=/opt/mintcastiq-web/.env
+Environment="PYTHONUNBUFFERED=1"
+
+[Install]
+WantedBy=multi-user.target
+
 ### Service User and Port Binding Notes
 - All MintCastIQ services run under the dedicated `mintcastiq` service account for audit‑grade clarity.
 - Flask (frontend.py) must **not** bind directly to privileged ports (<1024) when running under non‑root users.
