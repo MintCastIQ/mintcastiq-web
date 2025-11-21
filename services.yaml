@@ -22,7 +22,7 @@ services:
 
   - name: mintcastiq-web
     ip: 192.168.50.17
-    port: 80
+    port: 8080
     description: >
       Frontend web server. Hosts contributor UI and routes requests to backend services.
       Accessible via browser at http://mintcastiq-web/.
