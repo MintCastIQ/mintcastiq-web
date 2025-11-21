@@ -16,22 +16,33 @@ MintCastIQ is a modular, contributor‑safe platform for forensic trading card c
 - Flask (see `requirements.txt`)
 - nginx
 
-## Quick Start
+## Installation
+
+### Backend
 ```bash
-# Backend
 python3 -m venv webvenv
 source webvenv/bin/activate
 pip install -r requirements.txt
 python api.py
+```
 
-# Frontend
+### Frontend
+```bash
 cd frontend-vite
 npm install
 npm run dev   # local dev server
 npm run build # production build -> dist/
+```
+
+### nginx
+- Config lives in /etc/nginx/sites-available/mintcastiq.conf
+- Symlink into sites-enabled/:
+```bash
+sudo ln -s /etc/nginx/sites-available/mintcastiq.conf /etc/nginx/sites-enabled/
+sudo nginx -t
+sudo systemctl reload nginx
+```
 
 ## Deployment
 - nginx serves frontend-vite/dist
 - Flask API proxied at /api/
-
-
