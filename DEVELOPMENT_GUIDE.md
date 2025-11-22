@@ -3,6 +3,36 @@
 - MintCastIQ is a contributor‑safe pipeline for trading card capture, grading, and benchmarking.  
 - This guide documents the development environment, contributor workflow, and host GPU worker setup.
 ---
+## Install Docker
+### Option 1 Quick Install Debian/Ubuntu
+```bash
+sudo apt update
+sudo apt install docker.io
+sudo systemctl enable --now docker
+```
+### Option 2 Latest Docker CE & Compose v2 (Recommended)
+```bash
+# Install prerequisites
+sudo apt-get update
+sudo apt-get install ca-certificates curl gnupg lsb-release
+
+# Add Docker’s official GPG key
+sudo mkdir -p /etc/apt/keyrings
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | \
+  sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+
+# Add Docker repo
+echo \
+  "deb [arch=$(dpkg --print-architecture) \
+  signed-by=/etc/apt/keyrings/docker.gpg] \
+  https://download.docker.com/linux/ubuntu \
+  $(lsb_release -cs) stable" | \
+  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+
+# Install Docker CE + CLI + Compose plugin
+sudo apt-get update
+sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin
+```
 ## Contributor Workflow
 - **Primary focus**: CPU‑safe development in VMs or local environments.
 - **Endpoints**: Contributors interact with the GPU worker via HTTP API.
