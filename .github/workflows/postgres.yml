@@ -1,4 +1,4 @@
-name: Python tests with Postgres pool
+name: Database Connection Tests
 
 on: [push, pull_request]
 
@@ -9,13 +9,13 @@ jobs:
       postgres:
         image: postgres:15
         env:
-          POSTGRES_USER: django
-          POSTGRES_PASSWORD: djangopass
-          POSTGRES_DB: mciq
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: testdb
         ports:
           - 5432:5432
         options: >-
-          --health-cmd "pg_isready -U django"
+          --health-cmd "pg_isready -U postgres"
           --health-interval 10s
           --health-timeout 5s
           --health-retries 5
@@ -34,6 +34,4 @@ jobs:
           pip install pytest psycopg2-binary sqlalchemy
 
       - name: Run tests
-        env:
-          TEST_DB_URI: postgresql://postgres:postgres@100.82.40.3:5432/mciq
         run: pytest -q
