@@ -1,0 +1,15 @@
+services:
+  web:
+    build: .
+    ports:
+      - "8002:8002"
+    volumes:
+      - ./backend:/app/backend
+    environment:
+      DJANGO_SECRET_KEY: ${DJANGO_SECRET_KEY}
+      DJANGO_DEBUG: ${DJANGO_DEBUG}
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_HOST: ${DB+IP}
+      POSTGRES_PORT: ${POSTGRES_PORT}
