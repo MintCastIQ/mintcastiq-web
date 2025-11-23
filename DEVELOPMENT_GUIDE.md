@@ -128,6 +128,13 @@ fix/postgres-uri-validation-#17
 ✅ Ensure all tests pass before merge.
 ✅ Delete branch after merge.
 
+## 🔀 Django Routers Overview
+
+| Router Type        | Purpose                                        | Where Defined                       | Example Usage                                        |
+|--------------------|------------------------------------------------|-------------------------------------|------------------------------------------------------|
+| URL Dispatcher     | Maps request paths to views                    | `urls.py`                           | `path('about/', views.about_view)`                   |
+| DRF Router         | Auto‑generates RESTful API routes for ViewSets | Django REST Framework               | `router.register(r'users', UserViewSet)`             |
+| Database Router    | Directs queries to specific databases          | `DATABASE_ROUTERS` in `settings.py` | Route `auth` models to one DB, app models to another |
 ## 📋 Component Tracking
 
 | Component | Status               | Assignee         | Test Coverage         | Dependencies         |
