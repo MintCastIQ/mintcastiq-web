@@ -1,81 +1,51 @@
+
+---
+
+## 🤝 CONTRIBUTING.md (Detailed Git Flow)
+
 # Contributing to MintCastIQ
-- Thank you for your interest in contributing!  
-MintCastIQ is evolving into a **web‑first platform** with a mobile companion planned down the road. This guide outlines how to participate safely, effectively, and in line with our audit‑grade standards.
+
+We welcome contributors! Please follow these guidelines:
+
+## Workflow
+1. Fork and clone the repo:
+```bash
+git clone https://github.com/MintCastIQ/MintCastIQ.git
+cd mintcastiq
+```
+2. Create a feature branch
+```bash
+git checkout -b feature/my-feature
+```
+3. Make changes in one module at a time (sections/, components/, or backend/).
+4. Run tests and lint checks:
+```bash
+npm run lint
+pytest
+```
+5. Commit with clear messages:
+```bash
+git commit -m "feat: add checklist section"
+```
+6. Push and open a pull request:
+```bash
+git push origin feature/my-feature
+```
+## ## 📦 Pull Requests
+- Open a PR against `develop`.
+- Include:
+  - A summary of changes.
+  - Screenshots or demos if UI‑related.
+  - Notes on testing and validation.
+- Expect review feedback — clarity and reproducibility are prioritized.
 ---
-## 🧩 Getting Started
-- **Fork the repo** and create a feature branch:
-  ```bash
-  git checkout -b feature/my-feature
-  ```
-- Keep commits atomic — one logical change per commit.
-- Write clear commit messages:
-- Use imperative mood (“Add overlay pipeline”).
-- Reference issues when applicable (Fixes #42).
----
-## Contributor Roles
 
-MintCastIQ supports two primary contributor types:
+## 🤝 CONTRIBUTING.md (Contributor onboarding)
 
-### 1. Code Contributors
-- **Focus:** Application logic, infrastructure, and pipeline improvements.
-- **Access:** Git repository, issue tracker, and development environment.
-- **Responsibilities:**
-  - Implement new features and bug fixes.
-  - Maintain audit‑grade commit hygiene (tags, milestones, documentation).
-  - Respect modular architecture and contributor‑safe onboarding practices.
-  - Document architectural decisions in `DEVELOPMENT_GUIDE.md`.
+```markdown
+# Contributing to MintCastIQ
 
-### 2. Scan Contributors
-- **Focus:** Providing card scans for probabilistic grading and forensic validation.
-- **Access:** Upload endpoints, contributor‑safe capture pipeline, and annotation guides.
-- **Responsibilities:**
-  - Follow capture standards (lighting, orientation, resolution).
-  - Ensure each card submission includes exactly 10 hashes for deduplication.
-  - Use ergonomic UI and symbolic overlays (no autoscan defaults).
-  - Respect contributor‑safe storage practices (symlinked pipelines, audit‑grade rotation).
-  ┌─────────────────────┐
-  │ Code Contributor    │
-  └─────────┬───────────┘
-            │
-            │
-    pushes code, docs, configs
-            ▼
-  ┌─────────────────────┐
-  │ Git Repository      │
-  │ + CI/CD Pipeline    │
-  └─────────┬───────────┘
-            │
-    deploys services
-            ▼
-  ┌─────────────────────┐
-  │ Frontend Service    │
-  │ (Flask on 8080)     │
-  └─────────┬───────────┘
-            │
-            │
-    provides capture UI
-            ▼
-  ┌─────────────────────┐
-  │ Scan Contributor    │
-  └─────────┬───────────┘
-            │
-            │
-    uploads scans + hashes
-            ▼
-  ┌─────────────────────┐
-  │ Capture Pipeline    │
-  │ (hashing, overlays  │
-  │ validation, logs)   │
-  └─────────┬───────────┘
-            │
-            │
-       validated data
-            ▼
-    ┌─────────────────────┐
-    │ Storage + Analysis  │
-    │ (audit‑grade DB )   │
-    │                     │
-    └─────────────────────┘
+We welcome contributors! Please follow these guidelines:
 
 ---
 ## 👥 Contributor Types (Code)
@@ -89,6 +59,20 @@ MintCastIQ supports two primary contributor types:
   - Review pull requests, merge changes, and manage roadmap alignment.
   - Responsible for enforcing audit‑grade clarity and contributor safety.
 ---
+## Code Standards
+- Frontend: React + TypeScript, modular components in /sections and /components.
+- Backend: Flask API only, no templates/static.
+- Logging: Explicit logging for audit‑grade clarity.
+- Naming: Descriptive, contributor‑safe names.
+
+## Git Hygiene
+Ignore node_modules/, logs/, webvenv/, __pycache__/.
+
+Tag milestones clearly:
+```bash
+git tag -a v0.1.0 -m "Initial Vite migration"
+git push origin v0.1.0
+```
 ## 🌐 Project Scope
 - **Web app**: Primary focus. Built with modern frameworks (React/Vue/Svelte — see README for current stack).
 - **Mobile companion**: Planned for later, will reuse web APIs and design principles.
@@ -106,14 +90,7 @@ MintCastIQ supports two primary contributor types:
 - No secrets, credentials, or personal data in commits.
 - Use environment variables for sensitive configs.
 - Respect privacy guidelines outlined in `PRIVACY.md`.
-## 📦 Pull Requests
-- Open a PR against `develop`.
-- Include:
-  - A summary of changes.
-  - Screenshots or demos if UI‑related.
-  - Notes on testing and validation.
-- Expect review feedback — clarity and reproducibility are prioritized.
----
+
 ## 🚀 Roadmap Alignment
 - Contributions should align with the **web‑first roadmap**.
 - Mobile features are welcome if scoped as companion modules, not primary focus.
