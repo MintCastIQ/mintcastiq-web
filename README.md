@@ -11,54 +11,30 @@
 - `PRIVACY.md` — transparency on data handling and contributor safety
 - `DEVELOPMENT_GUIDE.md` — technical standards, workflows, and onboarding notes
 ---
+## Features
+- Full Django stack (no React/Node)
+- PostgreSQL integration (external VFM instance)
+- REST API powered by Django REST Framework
+- Contributor-friendly Docker setup
+
+## Quick Start
+```bash
+git clone https://github.com/<your-org>/mintcastiq-web.git
+cd mintcastiq-web
+cp .env.example .env   # fill in DB credentials
+docker compose up -d
 ## 🧩 Getting Started
 Clone the repository:
 ```bash
 git clone https://github.com/MintCastIQ/MintCastIQ.git
 cd MintCastIQ
 ```
-## ⚛️Part 1 - React Frontend Setup
-### Install dependencies:
+### Create a Python virtual environment
 ```bash
-cd frontend
-npm install
-```
-### Run the development server:
-```bash
-npm run dev
-```
-This will start the React app on http://localhost:3000. Make sure it’s configured to talk to the Flask backend (see .env or proxy settings).
----
-## Part 2 — Flask Backend Setup
-### Create a virtual environment:
-```bash
-cd backend
 python3 -m venv venv
 source venv/bin/activate
+pip install --no-cache-dir -r requirements.txt
 ```
-### Install dependencies:
-```bash
-pip install -r requirements.txt
-```
-### Run the Flask server:
-```bash
-flask run
-```
-This will start the backend on http://localhost:5000. You can configure routes, grading logic, and metadata indexing here.
----
-## Part 3 — Docker Compose (Optional Unified Dev)
-### 🐳 Unified Dev (Docker Compose)
-To run both frontend and backend together:
-```bash
-docker-compose up --build
-```
-This will:
-- Build and run the React frontend and Flask backend in separate containers.
-- Expose ports 3000 (frontend) and 5000 (backend).
-- Ensure audit-grade reproducibility across environments.
-- Make sure your docker-compose.yml defines volumes, environment variables, and health checks for contributor safety.
----
-### Part 4
 ## 🔒 Principles
 - **Audit‑grade clarity**: Every workflow is documented and reproducible.
 - **Contributor safety**: No secrets or personal data in commits.
