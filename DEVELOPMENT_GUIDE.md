@@ -90,5 +90,40 @@ docker compose exec web python backend/manage.py showmigrations
 
 ---
 
+## 🌿 Git Branch Naming Policy
+To maintain clarity and audit‑grade workflows, all branches must follow these conventions:
 
+### Prefix by Purpose
+- feature/ → new functionality
+- fix/ → bug fixes
+- docs/ → documentation changes
+- test/ → testing or CI improvements
+- chore/ → maintenance, cleanup, dependency bumps
+- hotfix/ → urgent production fixes
 
+### Slug Format
+- Use lowercase words separated by hyphens (-).
+- Keep names short but descriptive (3–5 words).
+
+### Example:
+```bash
+feature/db-factory-tests
+docs/add-testing-guide
+fix/postgres-uri-validation
+```
+### Issue/Ticket Reference
+If the branch relates to a GitHub Issue append the ID:
+```bash
+feature/db-factory-tests-#42
+fix/postgres-uri-validation-#17
+```
+### Lifecycle Rules
+- Branches must be rebased or rebranched if divergence occurs.
+- Delete merged branches promptly to avoid stale history.
+- Contributors should never push directly to main. Always use a PR workflow.
+
+### Contributor Checklist
+✅ Create branch with correct prefix and slug.
+✅ Link branch to issue/ticket in PR description.
+✅ Ensure all tests pass before merge.
+✅ Delete branch after merge.

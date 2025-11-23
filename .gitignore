@@ -1,0 +1,57 @@
+# mintcastiq/.gitignore
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg
+*.egg-info/
+*.manifest
+*.spec
+
+# Virtual environments
+venv/
+env/
+.venv/
+ENV/
+
+# Django
+*.log
+*.pot
+*.pyc
+db.sqlite3
+media/
+staticfiles/
+
+# Environment variables
+.env
+.env.*
+webvenv/
+
+# Docker
+*.pid
+*.seed
+*.pid.lock
+docker-compose.override.yml
+.docker/
+
+# IDEs and editors
+.vscode/
+.idea/
+*.swp
+*~
+.project
+.pydevproject
+
+# Coverage and testing
+.coverage
+htmlcov/
+.tox/
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.cache
+.pytest_cache/
