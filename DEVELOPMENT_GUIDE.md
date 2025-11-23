@@ -127,3 +127,37 @@ fix/postgres-uri-validation-#17
 ✅ Link branch to issue/ticket in PR description.
 ✅ Ensure all tests pass before merge.
 ✅ Delete branch after merge.
+
+## 📋 Component Tracking
+
+| Component | Status               | Assignee         | Test Coverage         | Dependencies         |
+|-----------|----------------------|------------------|-----------------------|----------------------|
+| Header    | 🟡 In Progress       | @username        | ✅ Unit tests          | Base template        |
+| Footer    | 🔵 Not Started       | —                 | ❌ None                | Base template        |
+| Menu/Nav  | 🔵 Not Started       | —                 | ❌ None                | Context processor    |
+| Base.html | 🟢 Complete         | @maintainer       | ✅ Verified            | —                    |
+
+## Color Scheme
+|Role            |Hex Code           |Notes                                                         |
+|----------------|-------------------|--------------------------------------------------------------|
+|Primary         |#005f73            |Deep teal, strong anchor color                                |
+|Secondary       |#0a9396            |Bright teal, complements primary                              |
+|Accent          |#94d2bd            |Soft aqua, good for highlights                                |
+|Background      |#e9d8a6            |Warm sand, easy on the eyes                                   |
+|Highlight       |#ee9b00            |Amber, draws attention without glare                          |
+|Alert/Warning   |#ca6702            |Burnt orange, readable on light/dark                          |
+|Success         |#2a9d8f            |Green-blue, safe foir colorblind users                        |
+|Neutral Dark    |#001219            |Near black, high contrast text                                |
+|Neutral mid     |#7d8597            |Muted gray, for secondary text                                |
+|Neutral light   |#fefefe            |White, clean background                                       |
+
+
+
+
+
+
+
+
+
+
+
