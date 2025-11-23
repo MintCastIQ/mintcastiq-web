@@ -135,3 +135,36 @@ fix/postgres-uri-validation-#17
 | URL Dispatcher     | Maps request paths to views                    | `urls.py`                           | `path('about/', views.about_view)`                   |
 | DRF Router         | Auto‑generates RESTful API routes for ViewSets | Django REST Framework               | `router.register(r'users', UserViewSet)`             |
 | Database Router    | Directs queries to specific databases          | `DATABASE_ROUTERS` in `settings.py` | Route `auth` models to one DB, app models to another |
+## 📋 Component Tracking
+
+| Component | Status               | Assignee         | Test Coverage         | Dependencies         |
+|-----------|----------------------|------------------|-----------------------|----------------------|
+| Header    | 🟡 In Progress       | @username        | ✅ Unit tests          | Base template        |
+| Footer    | 🔵 Not Started       | —                 | ❌ None                | Base template        |
+| Menu/Nav  | 🔵 Not Started       | —                 | ❌ None                | Context processor    |
+| Base.html | 🟢 Complete         | @maintainer       | ✅ Verified            | —                    |
+
+## Color Scheme
+|Role            |Hex Code           |Notes                                                         |
+|----------------|-------------------|--------------------------------------------------------------|
+|Primary         |#005f73            |Deep teal, strong anchor color                                |
+|Secondary       |#0a9396            |Bright teal, complements primary                              |
+|Accent          |#94d2bd            |Soft aqua, good for highlights                                |
+|Background      |#e9d8a6            |Warm sand, easy on the eyes                                   |
+|Highlight       |#ee9b00            |Amber, draws attention without glare                          |
+|Alert/Warning   |#ca6702            |Burnt orange, readable on light/dark                          |
+|Success         |#2a9d8f            |Green-blue, safe foir colorblind users                        |
+|Neutral Dark    |#001219            |Near black, high contrast text                                |
+|Neutral mid     |#7d8597            |Muted gray, for secondary text                                |
+|Neutral light   |#fefefe            |White, clean background                                       |
+
+
+
+
+
+
+
+
+
+
+
