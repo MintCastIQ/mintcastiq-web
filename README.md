@@ -1,48 +1,50 @@
 # MintCastIQ
+- MintCastIQ is a **web‑first platform** designed for resilient, audit‑grade trading card workflows.  
+- Originally prototyped as an Android app, MintCastIQ has shifted focus to the web, with a mobile companion planned for the future.
+---
+## 🚀 Vision
+- Build contributor‑safe, forensic‑grade pipelines for trading card capture and validation.
+- Empower contributors with ergonomic tooling, clear documentation, and audit‑ready workflows.
+## 📂 Repository Contents
+- `README.md` — overview and vision
+- `CONTRIBUTING.md` — guidelines for safe and effective collaboration
+- `PRIVACY.md` — transparency on data handling and contributor safety
+- `DEVELOPMENT_GUIDE.md` — technical standards, workflows, and onboarding notes
+---
+## Features
+- Full Django stack (no React/Node)
+- PostgreSQL integration (external VFM instance)
+- REST API powered by Django REST Framework
+- Contributor-friendly Docker setup
 
-MintCastIQ is a modular, contributor‑safe platform for forensic trading card capture and grading.
-
-## Project Structure
-- **backend/** → Flask API (Python 3.12)
-- **api.py** → API entry point
-- **frontend-vite/** → React + Vite frontend
-- **nginx/** → nginx config for serving frontend + proxying API
-- **logs/** → runtime logs (ignored in git)
-- **webvenv/** → Python virtual environment (ignored in git)
-
-## Requirements
-- Node.js ≥ 20.20.0 (or 21.x)
-- Python 3.12
-- Flask (see `requirements.txt`)
-- nginx
-
-## Installation
-
-### Backend
+## Quick Start
 ```bash
-python3 -m venv webvenv
-source webvenv/bin/activate
-pip install -r requirements.txt
-python api.py
-```
-
-### Frontend
+git clone https://github.com/<your-org>/mintcastiq-web.git
+cd mintcastiq-web
+cp .env.example .env   # fill in DB credentials
+docker compose up -d
+## 🧩 Getting Started
+Clone the repository:
 ```bash
-cd frontend-vite
-npm install
-npm run dev   # local dev server
-npm run build # production build -> dist/
+git clone https://github.com/MintCastIQ/MintCastIQ.git
+cd MintCastIQ
 ```
-
-### nginx
-- Config lives in /etc/nginx/sites-available/mintcastiq.conf
-- Symlink into sites-enabled/:
+### Create a Python virtual environment
 ```bash
-sudo ln -s /etc/nginx/sites-available/mintcastiq.conf /etc/nginx/sites-enabled/
-sudo nginx -t
-sudo systemctl reload nginx
+python3 -m venv venv
+source venv/bin/activate
+pip install --no-cache-dir -r requirements.txt
 ```
-
-## Deployment
-- nginx serves frontend-vite/dist
-- Flask API proxied at /api/
+## 🔒 Principles
+- **Audit‑grade clarity**: Every workflow is documented and reproducible.
+- **Contributor safety**: No secrets or personal data in commits.
+- **Modularity**: Infrastructure and tooling are designed for scale and adaptability.
+---
+## 🤝 Community
+- MintCastIQ thrives on collaboration.  
+- Please read the [`CONTRIBUTING.md`](CONTRIBUTING.md) before submitting pull requests
+- Join discussions to help shape the roadmap.
+---
+## 📜 License
+This project will be released under an open‑source license (to be finalized).  
+All contributions are subject to review for audit clarity and contributor safety.
