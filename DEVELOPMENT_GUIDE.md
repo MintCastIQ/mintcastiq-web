@@ -158,11 +158,63 @@ fix/postgres-uri-validation-#17
 |Neutral mid     |#7d8597            |Muted gray, for secondary text                                |
 |Neutral light   |#fefefe            |White, clean background                                       |
 
+## 🧩 MintCastIQ Docstring Style Guide
+### 🔹 General Format (for functions, methods, classes)
+"""
+[One-line summary]
+[Extended description if needed — what the function/class does, why it matters, and any contributor notes.]
+Args:
+    arg1 (type): Description of the argument and its role in validation or logic.
+    arg2 (type): Description of the argument.
+Returns:
+    type: Description of the return value and its structure.
+Raises:
+    ExceptionType: Conditions under which this exception is raised.
+Example:
+    >>> result = function_name("input")
+    >>> assert result == expected_output
+"""
+#### 🧪 Example: Validator Function
+```python
+def validate_slug(value):
+    """
+    Validates that a slug contains only lowercase letters, numbers, and hyphens.
+    This ensures audit-safe identifiers for DimCard objects and prevents ambiguity in hash tracking.
+    Args:
+        value (str): The slug string to validate.
+    Raises:
+        ValidationError: If the slug contains invalid characters.
+    Example:
+        >>> validate_slug("mintcastiq-2025")
+    """
+```
+#### 🧬 Example: Model Method (clean())
+```python
+def clean(self):
+    """
+    Validates cross-field integrity for DimCard objects.
 
+    Ensures that `hash_count` is exactly 10, enforcing forensic consistency across all MintCastIQ cards.
 
+    Raises:
+        ValidationError: If `hash_count` is not equal to 10.
+    """
+```
+#### 🧱 Example: Class-Level Docstring
+```python
+class DimCard(models.Model):
+    """
+    Represents a validated trading card within the MintCastIQ system.
 
-
-
+    Each card must store exactly 10 hashes for forensic deduplication and contributor-safe onboarding.
+    """
+```
+### 🔐 Best Practices
+- Always include examples — contributors can copy/paste and test instantly.
+- Explain why — not just what the function does, but why it matters to MintCastIQ’s integrity.
+- Use consistent phrasing — e.g., “forensic validation”, “contributor-safe”, “audit-grade”.
+- Document exceptions explicitly — so contributors know what to catch and why.
+- Avoid ambiguity — every docstring should clarify intent, not just describe behavior.
 
 
 
