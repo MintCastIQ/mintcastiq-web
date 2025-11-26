@@ -55,3 +55,7 @@ coverage.xml
 *.py,cover
 .cache
 .pytest_cache/
+
+# scripts
+repo-healthcheck.sh
+repo-healthcheck.py
