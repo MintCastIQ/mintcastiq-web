@@ -163,18 +163,20 @@ class DimCardParallel(models.Model):
 
 class DimGrade(SoftDeleteMixin):
     grade_id = models.AutoField(primary_key=True)
-    grading_company = models.CharField(max_length=50, default='RAW')
+    grading_standard = models.CharField(max_length=50, db_index=True, default='RAW')
     numeric_value = models.DecimalField(max_digits=10, decimal_places=1)
     grade_label = models.CharField(max_length=255)
+    overlay_ref = models.CharField(max_length=100, blank=True, null=True)
 
     class Meta:
         db_table = 'dim_grade'
         constraints = [
             models.UniqueConstraint(
-                fields=['grading_company', 'numeric_value'],
+                fields=['grading_standard', 'numeric_value', 'grade_label'],
                 name='unique_grade'
             )
         ]
+
 
 
 class DimUsers(SoftDeleteMixin):
