@@ -28,6 +28,7 @@ INSTALLED_APPS = [
 
     # Your apps
     'mintcastiq',   # replace with your actual app name
+    'rest_framework'
 ]
 
 MIDDLEWARE = [
@@ -64,7 +65,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Static files (CSS, JS, images)
-STATIC_URL = '/static/'
+STATIC_URL = '/staticfiles/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Media files (uploads, optional)
@@ -72,6 +73,11 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 ALLOWED_HOSTS = [
-    '0.0.0.0'
-
+    '192.168.50.74',
+    '127.0.0.1',
+    'localhost'
 ]
+
+ROOT_URLCONF = "mintcastiq.urls"
+DEBUG = True
+SECRET_KEY = "o&840xb#!4t70!$m!!^og*xf(rk8z*c#d)+&risl5ibtgh@vd^"
