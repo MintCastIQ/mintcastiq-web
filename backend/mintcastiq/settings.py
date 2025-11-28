@@ -28,6 +28,7 @@ INSTALLED_APPS = [
 
     # Your apps
     'mintcastiq',   # replace with your actual app name
+    'rest_framework'
 ]
 
 MIDDLEWARE = [

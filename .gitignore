@@ -59,3 +59,7 @@ coverage.xml
 # scripts
 repo-healthcheck.sh
 repo-healthcheck.py
+
+# Ignore MintCastIQ session SQL dumps
+mintcastiq*.sql
+mintcastiq*.sq
