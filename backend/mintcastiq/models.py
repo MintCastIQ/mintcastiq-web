@@ -10,20 +10,6 @@ class Status(models.TextChoices):
     ACTIVE = 'a', 'active'
     INACTIVE = 'i', 'inactive'
 
-
-class HashPosition(models.TextChoices):
-    FULL_CARD = "full_card", "Full Card"
-    NE = "NE", "Northeast"
-    N = "N", "North"
-    NW = "NW", "Northwest"
-    W = "W", "West"
-    SW = "SW", "Southwest"
-    S = "S", "South"
-    SE = "SE", "Southeast"
-    E = "E", "East"
-    CENTER = "Center", "Center"
-
-
 class ActiveManager(models.Manager):
     """Custom manager that only returns active records."""
     def get_queryset(self):
@@ -41,7 +27,6 @@ class SoftDeleteMixin(models.Model):
         default=Status.ACTIVE,
         db_index=True
     )
-
     objects = models.Manager()   # default manager (all records)
     active = ActiveManager()     # filtered manager (only active records)
 
@@ -82,11 +67,9 @@ class DimSet(SoftDeleteMixin):
             )
         ]
 
-
 class DimParallel(SoftDeleteMixin):
     parallel_id = models.AutoField(primary_key=True)
     parallel_name = models.CharField(max_length=255)
-    parallel_type = models.CharField(max_length=255, blank=True, null=True)
     print_run = models.IntegerField(blank=True, null=True)
     set = models.ForeignKey(DimSet, on_delete=models.CASCADE, blank=True, null=True)
 
@@ -99,16 +82,16 @@ class DimParallel(SoftDeleteMixin):
             )
         ]
 
-
 class DimCard(SoftDeleteMixin):
     card_id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=255)
     team_name = models.CharField(max_length=255, blank=True, null=True)
     card_number = models.CharField(max_length=25, blank=True, null=True)
-    release_year = models.IntegerField(blank=True, null=True)
     parallel = models.ForeignKey(DimParallel, on_delete=models.CASCADE, blank=True, null=True)
     set = models.ForeignKey(DimSet, on_delete=models.CASCADE, blank=True, null=True)
     identity_string = models.CharField(max_length=255, blank=True, null=True, db_index=True)
+    stock_image_path = models.CharField(max_length=255, blank=True, null=True)
+    stock_image_name = models.CharField(max_length=255, blank=True, null=True)
 
     class Meta:
         db_table = 'dim_card'
@@ -121,45 +104,16 @@ class DimCard(SoftDeleteMixin):
 
     def save(self, *args, **kwargs):
         parts = [
-            str(self.release_year).strip() if self.release_year else "",
+            str(self.set.set_year).strip() if self.set and self.set.set_year else "",
+            str(self.set.publisher).strip() if self.set and self.set.publisher else "",
             str(self.set.set_name).strip() if self.set and self.set.set_name else "",
-            str(self.parallel.parallel_name).strip() if self.parallel and self.parallel.parallel_name else "",
             str(self.set.subset_name).strip() if self.set and self.set.subset_name else "",
             str(self.card_number).strip() if self.card_number else "",
+            str(self.parallel.parallel_name).strip() if self.parallel and self.parallel.parallel_name else "",
             str(self.name).strip() if self.name else "",
         ]
         self.identity_string = " ".join([p for p in parts if p])
         super().save(*args, **kwargs)
-
-
-class DimCardHash(SoftDeleteMixin):
-    hash_id = models.AutoField(primary_key=True)
-    card = models.ForeignKey(DimCard, on_delete=models.CASCADE, blank=True, null=True)
-    hash_value = models.CharField(max_length=64, db_index=True)
-    hash_type = models.CharField(max_length=50)
-    hash_run = models.PositiveIntegerField(default=1)
-    hash_position = models.CharField(
-        max_length=20,
-        choices=HashPosition.choices,
-        db_index=True
-    )
-    created_at = models.DateTimeField(default=timezone.now)
-
-    class Meta:
-        db_table = 'dim_card_hash'
-        constraints = [
-            models.UniqueConstraint(
-                fields=["card", "hash_run", "hash_position"],
-                name="unique_card_run_position"
-            )
-        ]
-
-
-class DimCardParallel(models.Model):
-    set = models.ForeignKey(DimSet, on_delete=models.CASCADE)
-    parallel = models.ForeignKey(DimParallel, on_delete=models.CASCADE)
-    hash_run = models.PositiveIntegerField()
-
 
 class DimGrade(SoftDeleteMixin):
     grade_id = models.AutoField(primary_key=True)
@@ -177,8 +131,6 @@ class DimGrade(SoftDeleteMixin):
             )
         ]
 
-
-
 class DimUsers(SoftDeleteMixin):
     user_id = models.AutoField(primary_key=True)
     username = models.CharField(unique=True, max_length=50)
@@ -194,7 +146,6 @@ class DimUsers(SoftDeleteMixin):
     class Meta:
         db_table = 'dim_users'
 
-
 class DimSessions(SoftDeleteMixin):
     session_id = models.AutoField(primary_key=True)
     user = models.ForeignKey(DimUsers, on_delete=models.CASCADE, blank=True, null=True)
@@ -205,35 +156,9 @@ class DimSessions(SoftDeleteMixin):
     class Meta:
         db_table = 'dim_sessions'
 
-
 # -----------------------------
 # Fact Tables
 # -----------------------------
-
-class FactChecklistItem(SoftDeleteMixin):
-    checklist_item_id = models.AutoField(primary_key=True)
-    card = models.ForeignKey(DimCard, on_delete=models.CASCADE)
-    set = models.ForeignKey(DimSet, on_delete=models.CASCADE)
-    parallel = models.ForeignKey(DimParallel, on_delete=models.CASCADE)
-    source = models.TextField(blank=True, null=True)
-    notes = models.TextField(blank=True, null=True)
-    identity_string = models.CharField(max_length=255, db_index=True, blank=True, null=True)
-
-    class Meta:
-        db_table = 'fact_checklist_item'
-        constraints = [
-            models.UniqueConstraint(
-                fields=['identity_string'],
-                name='unique_checklist_identity'
-            )
-        ]
-
-    def save(self, *args, **kwargs):
-        if self.card:
-            self.identity_string = self.card.identity_string
-        super().save(*args, **kwargs)
-
-
 class FactCardEvents(SoftDeleteMixin):
     event_id = models.AutoField(primary_key=True)
     card = models.ForeignKey(DimCard, on_delete=models.CASCADE, blank=True, null=True)
@@ -251,26 +176,39 @@ class FactCardEvents(SoftDeleteMixin):
 class FactInventory(SoftDeleteMixin):
     inventory_id = models.AutoField(primary_key=True)
     user = models.ForeignKey(DimUsers, on_delete=models.DO_NOTHING, blank=True, null=True)
+    
+    class Meta:
+        db_table = 'fact_inventory'
+
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)
+
+class FactInventoryDetail(SoftDeleteMixin):
+    detail_id = models.AutoField(primary_key=True)
+    inventory = models.ForeignKey(FactInventory, on_delete=models.DO_NOTHING, blank=True, null=True)
     card = models.ForeignKey(DimCard, on_delete=models.DO_NOTHING, blank=True, null=True)
-    checklist_item = models.ForeignKey(FactChecklistItem, on_delete=models.DO_NOTHING, blank=True, null=True)
     grade = models.ForeignKey(DimGrade, on_delete=models.DO_NOTHING, blank=True, null=True)
-    quantity = models.IntegerField(blank=True, null=True)
+    quantity = models.IntegerField(blank=True, null=True )
     acquired_at = models.DateTimeField(blank=True, null=True)
     source = models.TextField(blank=True, null=True)
     notes = models.TextField(blank=True, null=True)
     identity_string = models.CharField(max_length=255, db_index=True, blank=True, null=True)
+    image_path = models.CharField(max_length=255, blank=True, null=True)
+    image_name = models.CharField(max_length=255, blank=True, null=True)
+    upc = models.CharField(max_length=255, blank=True, null=True)
 
     class Meta:
-        db_table = 'fact_inventory'
+        db_table = 'fact_inventory_detail'
         constraints = [
             models.UniqueConstraint(
                 fields=['identity_string'],
-                name='unique_inventory'
+                name='unique_inventory_detail'
             )
         ]
-
+    
     def save(self, *args, **kwargs):
+        if self.inventory:
+            self.inventory.save()
         if self.card:
             self.identity_string = self.card.identity_string
         super().save(*args, **kwargs)
-
