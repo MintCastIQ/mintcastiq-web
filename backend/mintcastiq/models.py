@@ -212,3 +212,11 @@ class FactInventoryDetail(SoftDeleteMixin):
         if self.card:
             self.identity_string = self.card.identity_string
         super().save(*args, **kwargs)
+
+class ChecklistUpload(models.Model):
+    created_at = models.DateTimeField(auto_now_add=True)
+    file = models.FileField(upload_to="checklists/")
+    processed = models.BooleanField(default=False)
+
+    def __str__(self):
+        return f"Checklist Upload {self.id} ({'processed' if self.processed else 'pending'})"

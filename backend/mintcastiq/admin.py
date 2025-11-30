@@ -1,7 +1,8 @@
 from django.contrib import admin
 from django.utils.html import format_html
-from .models import DimGrade
+from .models import DimGrade, ChecklistUpload
 from django.conf import settings
+from .checklist_service import ingest_checklist
 
 
 @admin.register(DimGrade)
@@ -20,3 +21,15 @@ class DimGradeAdmin(admin.ModelAdmin):
             )
         return "—"
     overlay_preview.short_description = "Overlay"
+
+@admin.register(ChecklistUpload)
+class ChecklistUploadAdmin(admin.ModelAdmin):
+    list_display = ("id", "created_at", "processed")
+
+    def save_model(self, request, obj, form, change):
+        super().save_model(request, obj, form, change)
+        if obj.file and not obj.processed:
+            ingest_checklist(obj.file.path)
+            obj.processed = True
+            obj.save()
+            self.message_user(request, "Checklist ingested successfully.")
