@@ -57,6 +57,7 @@ class DimSet(SoftDeleteMixin):
     release_date = models.DateField(blank=True, null=True)
     set_year = models.CharField(max_length=10, blank=True, null=True)
     subset_name = models.CharField(max_length=255, blank=True, null=True)
+    print_run = models.PositiveIntegerField(blank=True, null=True)
 
     class Meta:
         db_table = 'dim_set'
@@ -67,20 +68,62 @@ class DimSet(SoftDeleteMixin):
             )
         ]
 
+    def json_eq(self, other) -> bool:
+        if not isinstance(other, DimSet):
+            return False
+        return (
+            self.set_name == other.set_name and
+            self.publisher == other.publisher and
+            self.set_year == other.set_year and
+            self.subset_name == other.subset_name
+        )
+    
+    def to_dict(self) -> dict | None:
+        return {
+            "set_id": self.set_id,
+            "set_name": self.set_name,
+            "publisher": self.publisher,
+            "release_date": self.release_date,
+            "set_year": self.set_year,
+            "subset_name": self.subset_name,
+        }
+    
+    def friendly_name(self) -> str | None:
+        return " ".join([str(self.set_year), str(self.publisher), str(self.set_name)]) if self.set_year and self.publisher and self.set_name else None
+        
+
 class DimParallel(SoftDeleteMixin):
     parallel_id = models.AutoField(primary_key=True)
     parallel_name = models.CharField(max_length=255)
     print_run = models.IntegerField(blank=True, null=True)
-    set = models.ForeignKey(DimSet, on_delete=models.CASCADE, blank=True, null=True)
+    cardset = models.ForeignKey(DimSet, on_delete=models.CASCADE, blank=True, null=True)
 
     class Meta:
         db_table = 'dim_parallel'
         constraints = [
             models.UniqueConstraint(
-                fields=['set', 'parallel_name'],
+                fields=['cardset', 'parallel_name'],
                 name='unique_set_parallel'
             )
         ]
+
+    def json_eq(self, other) -> bool:
+        if not isinstance(other, DimParallel):
+            return False
+        return (
+            self.cardset == other.cardset and
+            self.parallel_name == other.parallel_name and
+            self.print_run == other.print_run
+        )
+    
+    def to_dict(self) -> dict:
+        return {
+            "parallel_id": self.parallel_id,
+            "parallel_name": self.parallel_name,
+            "print_run": self.print_run,
+            "cardset": self.cardset.to_dict() if self.cardset else None,
+    }
+
 
 class DimCard(SoftDeleteMixin):
     card_id = models.AutoField(primary_key=True)
@@ -88,7 +131,7 @@ class DimCard(SoftDeleteMixin):
     team_name = models.CharField(max_length=255, blank=True, null=True)
     card_number = models.CharField(max_length=25, blank=True, null=True)
     parallel = models.ForeignKey(DimParallel, on_delete=models.CASCADE, blank=True, null=True)
-    set = models.ForeignKey(DimSet, on_delete=models.CASCADE, blank=True, null=True)
+    cardset = models.ForeignKey(DimSet, on_delete=models.CASCADE, blank=True, null=True)
     identity_string = models.CharField(max_length=255, blank=True, null=True, db_index=True)
     stock_image_path = models.CharField(max_length=255, blank=True, null=True)
     stock_image_name = models.CharField(max_length=255, blank=True, null=True)
@@ -104,16 +147,39 @@ class DimCard(SoftDeleteMixin):
 
     def save(self, *args, **kwargs):
         parts = [
-            str(self.set.set_year).strip() if self.set and self.set.set_year else "",
-            str(self.set.publisher).strip() if self.set and self.set.publisher else "",
-            str(self.set.set_name).strip() if self.set and self.set.set_name else "",
-            str(self.set.subset_name).strip() if self.set and self.set.subset_name else "",
+            str(self.cardset.set_year).strip() if self.cardset and self.cardset.set_year else "",
+            str(self.cardset.publisher).strip() if self.cardset and self.cardset.publisher else "",
+            str(self.cardset.set_name).strip() if self.cardset and self.cardset.set_name else "",
+            str(self.cardset.subset_name).strip() if self.cardset and self.cardset.subset_name else "",
             str(self.card_number).strip() if self.card_number else "",
             str(self.parallel.parallel_name).strip() if self.parallel and self.parallel.parallel_name else "",
             str(self.name).strip() if self.name else "",
         ]
         self.identity_string = " ".join([p for p in parts if p])
         super().save(*args, **kwargs)
+
+    def json_eq(self, other) -> bool:
+        if not isinstance(other, DimCard):
+            return False
+        return (
+            self.cardset == other.cardset and
+            self.card_number == other.card_number and
+            self.name == other.name and
+            self.team_name == other.team_name
+        )
+    
+    def to_dict(self) -> dict:
+        return {
+            "card_id": self.card_id,
+            "name": self.name,
+            "team_name": self.team_name,
+            "card_number": self.card_number,
+            "parallel": self.parallel.to_dict() if self.parallel else None,
+            "cardset": self.cardset.to_dict() if self.cardset else None,
+            "identity_string": self.identity_string,
+            "stock_image_path": self.stock_image_path,
+            "stock_image_name": self.stock_image_name
+        }
 
 class DimGrade(SoftDeleteMixin):
     grade_id = models.AutoField(primary_key=True)
@@ -214,9 +280,11 @@ class FactInventoryDetail(SoftDeleteMixin):
         super().save(*args, **kwargs)
 
 class ChecklistUpload(models.Model):
+    # fields here
+    id = models.AutoField(primary_key=True)
     created_at = models.DateTimeField(auto_now_add=True)
     file = models.FileField(upload_to="checklists/")
     processed = models.BooleanField(default=False)
 
-    def __str__(self):
-        return f"Checklist Upload {self.id} ({'processed' if self.processed else 'pending'})"
+    class Meta:
+        db_table = 'checklist_upload'
