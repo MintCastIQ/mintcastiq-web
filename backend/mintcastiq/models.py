@@ -1,30 +1,26 @@
 from django.db import models
 from django.utils import timezone
-
+import hashlib
+from mintcastiq.serializers import serialize_for_hash
+from domain.enums import Status, CardType
 
 # -----------------------------
 # Shared Enums & Mixins
 # -----------------------------
 
-class Status(models.TextChoices):
-    ACTIVE = 'a', 'active'
-    INACTIVE = 'i', 'inactive'
-
 class ActiveManager(models.Manager):
     """Custom manager that only returns active records."""
     def get_queryset(self):
         return super().get_queryset().filter(status=Status.ACTIVE)
-
-
+    
 class SoftDeleteMixin(models.Model):
     """
     Mixin that adds a status field and soft delete behavior.
     Ensures rows are never physically deleted, only marked inactive.
     """
     status = models.CharField(
-        max_length=1,
-        choices=Status.choices,
-        default=Status.ACTIVE,
+        max_length=16,
+        default=Status.ACTIVE.value,
         db_index=True
     )
     objects = models.Manager()   # default manager (all records)
@@ -45,96 +41,79 @@ class SoftDeleteMixin(models.Model):
         self.soft_delete()
 
 
+def hash_object(instance) -> str:
+    """
+    Generate a stable hash string for a Django model instance.
+    Uses the serialize_for_hash function to get a JSON representation.
+    """
+    json_str = serialize_for_hash(instance)
+    return hashlib.sha256(json_str.encode("utf-8")).hexdigest()
+
 # -----------------------------
 # Dimension Tables
 # -----------------------------
 
-class DimSet(SoftDeleteMixin):
+class DimSet(SoftDeleteMixin, models.Model):
     """Represents a production set/subset combination."""
     set_id = models.AutoField(primary_key=True)
     set_name = models.CharField(max_length=255)
     publisher = models.CharField(max_length=255, blank=True, null=True)
-    release_date = models.DateField(blank=True, null=True)
     set_year = models.CharField(max_length=10, blank=True, null=True)
     subset_name = models.CharField(max_length=255, blank=True, null=True)
     print_run = models.PositiveIntegerField(blank=True, null=True)
+    type = models.CharField(max_length=50, blank=True, null=True)
+    friendly_name = models.CharField(max_length=128, default="FIXME")
+    checksum = models.CharField(max_length=64, default=friendly_name)     
 
     class Meta:
         db_table = 'dim_set'
         constraints = [
             models.UniqueConstraint(
-                fields=['set_name', 'subset_name', 'publisher', 'set_year'],
-                name='unique_set_subset'
+                fields=["friendly_name"],
+                name='unique_set'
             )
         ]
-
-    def json_eq(self, other) -> bool:
+    
+    def equals(self, other) -> bool:
         if not isinstance(other, DimSet):
             return False
         return (
-            self.set_name == other.set_name and
-            self.publisher == other.publisher and
-            self.set_year == other.set_year and
-            self.subset_name == other.subset_name
+            self.checksum == other.checksum
         )
     
-    def to_dict(self) -> dict | None:
-        return {
-            "set_id": self.set_id,
-            "set_name": self.set_name,
-            "publisher": self.publisher,
-            "release_date": self.release_date,
-            "set_year": self.set_year,
-            "subset_name": self.subset_name,
-        }
-    
-    def friendly_name(self) -> str | None:
-        return " ".join([str(self.set_year), str(self.publisher), str(self.set_name)]) if self.set_year and self.publisher and self.set_name else None
-        
+    def save(self, *args, **kwargs):
+        self.checksum = hash_object(self)
+        self.friendly_name = f"{self.set_year}-{self.publisher}-{self.set_name}-{self.subset_name}"
+        super().save(*args, **kwargs)
 
-class DimParallel(SoftDeleteMixin):
+class DimParallel(SoftDeleteMixin, models.Model):
     parallel_id = models.AutoField(primary_key=True)
-    parallel_name = models.CharField(max_length=255)
-    print_run = models.IntegerField(blank=True, null=True)
-    cardset = models.ForeignKey(DimSet, on_delete=models.CASCADE, blank=True, null=True)
+    parallel_name = models.CharField(max_length=64)
+    print_run = models.PositiveBigIntegerField(blank=True, null=True)
+    card_set = models.ForeignKey(DimSet, on_delete=models.DO_NOTHING, blank=True, null=True)
+    
 
     class Meta:
         db_table = 'dim_parallel'
         constraints = [
             models.UniqueConstraint(
-                fields=['cardset', 'parallel_name'],
-                name='unique_set_parallel'
+                fields=['parallel_name'],
+                name='unique_parallel'
             )
         ]
 
-    def json_eq(self, other) -> bool:
-        if not isinstance(other, DimParallel):
-            return False
-        return (
-            self.cardset == other.cardset and
-            self.parallel_name == other.parallel_name and
-            self.print_run == other.print_run
-        )
-    
-    def to_dict(self) -> dict:
-        return {
-            "parallel_id": self.parallel_id,
-            "parallel_name": self.parallel_name,
-            "print_run": self.print_run,
-            "cardset": self.cardset.to_dict() if self.cardset else None,
-    }
 
-
-class DimCard(SoftDeleteMixin):
+class DimCard(SoftDeleteMixin, models.Model):
     card_id = models.AutoField(primary_key=True)
-    name = models.CharField(max_length=255)
-    team_name = models.CharField(max_length=255, blank=True, null=True)
+    name = models.CharField(max_length=64)
+    team_name = models.CharField(max_length=64, blank=True, null=True)
     card_number = models.CharField(max_length=25, blank=True, null=True)
-    parallel = models.ForeignKey(DimParallel, on_delete=models.CASCADE, blank=True, null=True)
     cardset = models.ForeignKey(DimSet, on_delete=models.CASCADE, blank=True, null=True)
     identity_string = models.CharField(max_length=255, blank=True, null=True, db_index=True)
     stock_image_path = models.CharField(max_length=255, blank=True, null=True)
     stock_image_name = models.CharField(max_length=255, blank=True, null=True)
+
+    identity_fields = ['cardset.friendly_name', 'cardset.subset_name', 'card_number', 'parallel.parallel_name', 'name']
 
     class Meta:
         db_table = 'dim_card'
@@ -144,19 +123,6 @@ class DimCard(SoftDeleteMixin):
                 name='unique_card_identity'
             )
         ]
-
-    def save(self, *args, **kwargs):
-        parts = [
-            str(self.cardset.set_year).strip() if self.cardset and self.cardset.set_year else "",
-            str(self.cardset.publisher).strip() if self.cardset and self.cardset.publisher else "",
-            str(self.cardset.set_name).strip() if self.cardset and self.cardset.set_name else "",
-            str(self.cardset.subset_name).strip() if self.cardset and self.cardset.subset_name else "",
-            str(self.card_number).strip() if self.card_number else "",
-            str(self.parallel.parallel_name).strip() if self.parallel and self.parallel.parallel_name else "",
-            str(self.name).strip() if self.name else "",
-        ]
-        self.identity_string = " ".join([p for p in parts if p])
-        super().save(*args, **kwargs)
 
     def json_eq(self, other) -> bool:
         if not isinstance(other, DimCard):
@@ -180,8 +146,13 @@ class DimCard(SoftDeleteMixin):
             "stock_image_path": self.stock_image_path,
             "stock_image_name": self.stock_image_name
         }
+    
+    def save(self, *args, **kwargs):
+        self.identity_string = self.build_identity(self)
+        super().save(*args, **kwargs)
 
-class DimGrade(SoftDeleteMixin):
+
+class DimGrade(SoftDeleteMixin, models.Model):
     grade_id = models.AutoField(primary_key=True)
     grading_standard = models.CharField(max_length=50, db_index=True, default='RAW')
     numeric_value = models.DecimalField(max_digits=10, decimal_places=1)
@@ -197,7 +168,7 @@ class DimGrade(SoftDeleteMixin):
             )
         ]
 
-class DimUsers(SoftDeleteMixin):
+class DimUsers(SoftDeleteMixin, models.Model):
     user_id = models.AutoField(primary_key=True)
     username = models.CharField(unique=True, max_length=50)
     email = models.CharField(unique=True, max_length=255)
@@ -212,7 +183,7 @@ class DimUsers(SoftDeleteMixin):
     class Meta:
         db_table = 'dim_users'
 
-class DimSessions(SoftDeleteMixin):
+class DimSessions(SoftDeleteMixin, models.Model):
     session_id = models.AutoField(primary_key=True)
     user = models.ForeignKey(DimUsers, on_delete=models.CASCADE, blank=True, null=True)
     session_token = models.CharField(unique=True, max_length=255)
@@ -225,7 +196,7 @@ class DimSessions(SoftDeleteMixin):
 # -----------------------------
 # Fact Tables
 # -----------------------------
-class FactCardEvents(SoftDeleteMixin):
+class FactCardEvents(SoftDeleteMixin, models.Model):
     event_id = models.AutoField(primary_key=True)
     card = models.ForeignKey(DimCard, on_delete=models.CASCADE, blank=True, null=True)
     user = models.ForeignKey(DimUsers, on_delete=models.CASCADE, blank=True, null=True)
@@ -239,7 +210,7 @@ class FactCardEvents(SoftDeleteMixin):
     class Meta:
         db_table = 'fact_card_events'
 
-class FactInventory(SoftDeleteMixin):
+class FactInventory(SoftDeleteMixin, models.Model):
     inventory_id = models.AutoField(primary_key=True)
     user = models.ForeignKey(DimUsers, on_delete=models.DO_NOTHING, blank=True, null=True)
     
@@ -249,10 +220,84 @@ class FactInventory(SoftDeleteMixin):
     def save(self, *args, **kwargs):
         super().save(*args, **kwargs)
 
-class FactInventoryDetail(SoftDeleteMixin):
+class FactPlayerMaster(SoftDeleteMixin, models.Model):
+    hash_id = models.CharField(max_length=64, primary_key=True)
+    full_name = models.CharField(max_length=128)
+    card = models.ForeignKey(DimCard, on_delete=models.DO_NOTHING)
+    parallel = models.ForeignKey(DimParallel, on_delete=models.DO_NOTHING)
+    player_name = models.CharField(max_length=64)
+
+    identity_fields = ['full_name', 'player_name']
+
+    class Meta:
+        db_table = 'fact_player_master'
+
+    def save(self, *args, **kwargs):
+        hash_id = self.build_identity()
+        super().save(*args, **kwargs)
+
+    
+class FactTeamMaster(SoftDeleteMixin, models.Model):
+    hash_id = models.CharField(max_length=64, primary_key=True)
+    full_name = models.CharField(max_length=128)
+    card = models.ForeignKey(DimCard, on_delete=models.DO_NOTHING)
+    parallel = models.ForeignKey(DimParallel, on_delete=models.DO_NOTHING)
+    team_name = models.CharField(max_length=64)
+
+    identity_fields = ['full_name', 'team_name']
+
+    class Meta:
+        db_table = 'fact_team_master'
+
+    def save(self, *args, **kwargs):
+        hash_id = self.build_identity
+        super().save(*args, **kwargs)
+
+
+class BridgePlayerTeam(models.Model):
+    """
+    Relates FactPlayerMaster and FactTeamMaster rows by their hash_id.
+    Provides a clean join path without circular FK dependencies.
+    """
+
+    id = models.AutoField(primary_key=True)
+    player_master = models.ForeignKey(
+        FactPlayerMaster,
+        to_field="hash_id",
+        on_delete=models.DO_NOTHING,
+        db_index=True
+    )
+    team_master = models.ForeignKey(
+        FactTeamMaster,
+        to_field="hash_id",
+        on_delete=models.DO_NOTHING,
+        db_index=True
+    )
+
+    class Meta:
+        db_table = "bridge_player_team"
+        constraints = [
+            models.UniqueConstraint(
+                fields=["player_master", "team_master"],
+                name="unique_player_team_bridge"
+            )
+        ]
+
+class ChecklistUpload(models.Model):
+    # fields here
+    id = models.AutoField(primary_key=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    file = models.FileField(upload_to="checklists/")
+    processed = models.BooleanField(default=False)
+
+    class Meta:
+        db_table = 'checklist_upload'
+
+class FactInventoryDetail(SoftDeleteMixin, models.Model):
     detail_id = models.AutoField(primary_key=True)
     inventory = models.ForeignKey(FactInventory, on_delete=models.DO_NOTHING, blank=True, null=True)
-    card = models.ForeignKey(DimCard, on_delete=models.DO_NOTHING, blank=True, null=True)
+    player_master = models.ForeignKey(FactPlayerMaster, on_delete=models.DO_NOTHING, blank=True, null=True)
+    team_master = models.ForeignKey(FactTeamMaster,on_delete=models.DO_NOTHING, blank=True, null=True)
     grade = models.ForeignKey(DimGrade, on_delete=models.DO_NOTHING, blank=True, null=True)
     quantity = models.IntegerField(blank=True, null=True )
     acquired_at = models.DateTimeField(blank=True, null=True)
@@ -262,6 +307,8 @@ class FactInventoryDetail(SoftDeleteMixin):
     image_path = models.CharField(max_length=255, blank=True, null=True)
     image_name = models.CharField(max_length=255, blank=True, null=True)
     upc = models.CharField(max_length=255, blank=True, null=True)
+
+    identity_fields = ['']
 
     class Meta:
         db_table = 'fact_inventory_detail'
@@ -275,16 +322,6 @@ class FactInventoryDetail(SoftDeleteMixin):
     def save(self, *args, **kwargs):
         if self.inventory:
             self.inventory.save()
-        if self.card:
+        if self.player_master:
             self.identity_string = self.card.identity_string
         super().save(*args, **kwargs)
-
-class ChecklistUpload(models.Model):
-    # fields here
-    id = models.AutoField(primary_key=True)
-    created_at = models.DateTimeField(auto_now_add=True)
-    file = models.FileField(upload_to="checklists/")
-    processed = models.BooleanField(default=False)
-
-    class Meta:
-        db_table = 'checklist_upload'

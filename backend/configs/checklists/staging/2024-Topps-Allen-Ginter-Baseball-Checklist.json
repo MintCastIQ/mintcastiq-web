@@ -1,0 +1,2245 @@
+{
+  "cards": {
+    "Base": {
+      "card_number": "Base",
+      "player_name": "300",
+      "team_name": "Daddy Yankee",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": null
+      },
+      "note": ""
+    },
+    "2": {
+      "card_number": "2",
+      "player_name": "Endy Rodríguez",
+      "team_name": "Pittsburgh Pirates",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": "Base"
+      },
+      "print_run": ""
+    },
+    "3": {
+      "card_number": "3",
+      "player_name": "Hunter Goodman",
+      "team_name": "Colorado Rockies",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": "Base"
+      },
+      "print_run": ""
+    },
+    "4": {
+      "card_number": "4",
+      "player_name": "Henry Davis",
+      "team_name": "Pittsburgh Pirates",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": "Base"
+      },
+      "print_run": ""
+    },
+    "6": {
+      "card_number": "6",
+      "player_name": "Christian Encarnacion-Strand",
+      "team_name": "Cincinnati Reds",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": "Base"
+      },
+      "print_run": ""
+    },
+    "14": {
+      "card_number": "14",
+      "player_name": "Curtis Mead",
+      "team_name": "Tampa Bay Rays",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": "Base"
+      },
+      "print_run": ""
+    },
+    "19": {
+      "card_number": "19",
+      "player_name": "Emmet Sheehan",
+      "team_name": "Los Angeles Dodgers",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": "Base"
+      },
+      "print_run": ""
+    },
+    "21": {
+      "card_number": "21",
+      "player_name": "Emerson Hancock",
+      "team_name": "Seattle Mariners",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": "Base"
+      },
+      "print_run": ""
+    },
+    "23": {
+      "card_number": "23",
+      "player_name": "Gavin Williams",
+      "team_name": "Cleveland Guardians",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": "Base"
+      },
+      "print_run": ""
+    },
+    "24": {
+      "card_number": "24",
+      "player_name": "Masyn Winn",
+      "team_name": "St. Louis Cardinals",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": "Base"
+      },
+      "print_run": ""
+    },
+    "26": {
+      "card_number": "26",
+      "player_name": "Nick Gonzales",
+      "team_name": "Pittsburgh Pirates",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": "Base"
+      },
+      "print_run": ""
+    },
+    "27": {
+      "card_number": "27",
+      "player_name": "AJ Smith-Shawver",
+      "team_name": "Atlanta Braves",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": "Base"
+      },
+      "print_run": ""
+    },
+    "28": {
+      "card_number": "28",
+      "player_name": "Colton Cowser",
+      "team_name": "Baltimore Orioles",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": "Base"
+      },
+      "print_run": ""
+    },
+    "31": {
+      "card_number": "31",
+      "player_name": "Jasson Domínguez",
+      "team_name": "New York Yankees",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": "Base"
+      },
+      "print_run": ""
+    },
+    "32": {
+      "card_number": "32",
+      "player_name": "Andrew Abbott",
+      "team_name": "Cincinnati Reds",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": "Base"
+      },
+      "print_run": ""
+    },
+    "33": {
+      "card_number": "33",
+      "player_name": "Jordan Westburg",
+      "team_name": "Baltimore Orioles",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": "Base"
+      },
+      "print_run": ""
+    },
+    "34": {
+      "card_number": "34",
+      "player_name": "José Tena",
+      "team_name": "Cleveland Guardians",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": "Base"
+      },
+      "print_run": ""
+    },
+    "35": {
+      "card_number": "35",
+      "player_name": "Tyler Soderstrom",
+      "team_name": "Oakland Athletics",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": "Base"
+      },
+      "print_run": ""
+    },
+    "36": {
+      "card_number": "36",
+      "player_name": "Quinn Priester",
+      "team_name": "Pittsburgh Pirates",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": "Base"
+      },
+      "print_run": ""
+    },
+    "37": {
+      "card_number": "37",
+      "player_name": "Jordyn Adams",
+      "team_name": "Los Angeles Angels",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": "Base"
+      },
+      "print_run": ""
+    },
+    "44": {
+      "card_number": "44",
+      "player_name": "Elly De La Cruz",
+      "team_name": "Cincinnati Reds",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": "Base"
+      },
+      "print_run": ""
+    },
+    "46": {
+      "card_number": "46",
+      "player_name": "Pete Crow-Armstrong",
+      "team_name": "Chicago Cubs",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": "Base"
+      },
+      "print_run": ""
+    },
+    "49": {
+      "card_number": "49",
+      "player_name": "Heston Kjerstad",
+      "team_name": "Baltimore Orioles",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": "Base"
+      },
+      "print_run": ""
+    },
+    "53": {
+      "card_number": "53",
+      "player_name": "Austin Wells",
+      "team_name": "New York Yankees",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": "Base"
+      },
+      "print_run": ""
+    },
+    "56": {
+      "card_number": "56",
+      "player_name": "Kyren Paris",
+      "team_name": "Los Angeles Angels",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": "Base"
+      },
+      "print_run": ""
+    },
+    "57": {
+      "card_number": "57",
+      "player_name": "Lawrence Butler",
+      "team_name": "Oakland Athletics",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": "Base"
+      },
+      "print_run": ""
+    },
+    "58": {
+      "card_number": "58",
+      "player_name": "Slade Cecconi",
+      "team_name": "Arizona Diamondbacks",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": "Base"
+      },
+      "print_run": ""
+    },
+    "59": {
+      "card_number": "59",
+      "player_name": "Luis Matos",
+      "team_name": "San Francisco Giants",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": "Base"
+      },
+      "print_run": ""
+    },
+    "67": {
+      "card_number": "67",
+      "player_name": "Ronny Mauricio",
+      "team_name": "New York Mets",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": "Base"
+      },
+      "print_run": ""
+    },
+    "69": {
+      "card_number": "69",
+      "player_name": "Johan Rojas",
+      "team_name": "Philadelphia Phillies",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": "Base"
+      },
+      "print_run": ""
+    },
+    "71": {
+      "card_number": "71",
+      "player_name": "Noelvi Marte",
+      "team_name": "Cincinnati Reds",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": "Base"
+      },
+      "print_run": ""
+    },
+    "72": {
+      "card_number": "72",
+      "player_name": "Kyle Harrison",
+      "team_name": "San Francisco Giants",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": "Base"
+      },
+      "print_run": ""
+    },
+    "76": {
+      "card_number": "76",
+      "player_name": "Nick Loftin",
+      "team_name": "Kansas City Royals",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": "Base"
+      },
+      "print_run": ""
+    },
+    "77": {
+      "card_number": "77",
+      "player_name": "Ceddanne Rafaela",
+      "team_name": "Boston Red Sox",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": "Base"
+      },
+      "print_run": ""
+    },
+    "78": {
+      "card_number": "78",
+      "player_name": "Bryan Woo",
+      "team_name": "Seattle Mariners",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": "Base"
+      },
+      "print_run": ""
+    },
+    "79": {
+      "card_number": "79",
+      "player_name": "Marco Luciano",
+      "team_name": "San Francisco Giants",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": "Base"
+      },
+      "print_run": ""
+    },
+    "81": {
+      "card_number": "81",
+      "player_name": "Owen White",
+      "team_name": "Texas Rangers",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": "Base"
+      },
+      "print_run": ""
+    },
+    "82": {
+      "card_number": "82",
+      "player_name": "Zack Gelof",
+      "team_name": "Oakland Athletics",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": "Base"
+      },
+      "print_run": ""
+    },
+    "84": {
+      "card_number": "84",
+      "player_name": "Everson Pereira",
+      "team_name": "New York Yankees",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": "Base"
+      },
+      "print_run": ""
+    },
+    "85": {
+      "card_number": "85",
+      "player_name": "Alika Williams",
+      "team_name": "Pittsburgh Pirates",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": "Base"
+      },
+      "print_run": ""
+    },
+    "88": {
+      "card_number": "88",
+      "player_name": "Nolan Schanuel",
+      "team_name": "Los Angeles Angels",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": "Base"
+      },
+      "print_run": ""
+    },
+    "92": {
+      "card_number": "92",
+      "player_name": "Junior Caminero",
+      "team_name": "Tampa Bay Rays",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": "Base"
+      },
+      "print_run": ""
+    },
+    "96": {
+      "card_number": "96",
+      "player_name": "Evan Carter",
+      "team_name": "Texas Rangers",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": "Base"
+      },
+      "print_run": ""
+    },
+    "98": {
+      "card_number": "98",
+      "player_name": "Sal Frelick",
+      "team_name": "Milwaukee Brewers",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": "Base"
+      },
+      "print_run": ""
+    },
+    "99": {
+      "card_number": "99",
+      "player_name": "Jordan Lawlar",
+      "team_name": "Arizona Diamondbacks",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": "Base"
+      },
+      "print_run": ""
+    },
+    "146": {
+      "card_number": "146",
+      "player_name": "Parker Meadows",
+      "team_name": "Detroit Tigers",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": "Base"
+      },
+      "print_run": ""
+    },
+    "167": {
+      "card_number": "167",
+      "player_name": "Kyle Manzardo",
+      "team_name": "Cleveland Guardians",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": "Base"
+      },
+      "print_run": ""
+    },
+    "181": {
+      "card_number": "181",
+      "player_name": "Shota Imanaga",
+      "team_name": "Chicago Cubs",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": "Base"
+      },
+      "print_run": ""
+    },
+    "201": {
+      "card_number": "201",
+      "player_name": "Yoshinobu Yamamoto",
+      "team_name": "Los Angeles Dodgers",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": "Base"
+      },
+      "print_run": ""
+    },
+    "212": {
+      "card_number": "212",
+      "player_name": "Ben Brown",
+      "team_name": "Chicago Cubs",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": "Base"
+      },
+      "print_run": ""
+    },
+    "217": {
+      "card_number": "217",
+      "player_name": "Victor Scott II",
+      "team_name": "St. Louis Cardinals",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": "Base"
+      },
+      "print_run": ""
+    },
+    "232": {
+      "card_number": "232",
+      "player_name": "Andy Pages",
+      "team_name": "Los Angeles Dodgers",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": "Base"
+      },
+      "print_run": ""
+    },
+    "236": {
+      "card_number": "236",
+      "player_name": "Luis Vázquez",
+      "team_name": "Chicago Cubs",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": "Base"
+      },
+      "print_run": ""
+    },
+    "253": {
+      "card_number": "253",
+      "player_name": "Justin Foscue",
+      "team_name": "Texas Rangers",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": "Base"
+      },
+      "print_run": ""
+    },
+    "258": {
+      "card_number": "258",
+      "player_name": "Graham Pauley",
+      "team_name": "San Diego Padres",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": "Base"
+      },
+      "print_run": ""
+    },
+    "259": {
+      "card_number": "259",
+      "player_name": "Austin Martin",
+      "team_name": "Minnesota Twins",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": "Base"
+      },
+      "print_run": ""
+    },
+    "263": {
+      "card_number": "263",
+      "player_name": "Jonatan Clase",
+      "team_name": "Seattle Mariners",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": "Base"
+      },
+      "print_run": ""
+    },
+    "269": {
+      "card_number": "269",
+      "player_name": "Jung Hoo Lee",
+      "team_name": "San Francisco Giants",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": "Base"
+      },
+      "print_run": ""
+    },
+    "271": {
+      "card_number": "271",
+      "player_name": "Jack Leiter",
+      "team_name": "Texas Rangers",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": "Base"
+      },
+      "print_run": ""
+    },
+    "275": {
+      "card_number": "275",
+      "player_name": "Jackson Merrill",
+      "team_name": "San Diego Padres",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": "Base"
+      },
+      "print_run": ""
+    },
+    "276": {
+      "card_number": "276",
+      "player_name": "Jackson Chourio",
+      "team_name": "Milwaukee Brewers",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": "Base"
+      },
+      "print_run": ""
+    },
+    "277": {
+      "card_number": "277",
+      "player_name": "Jackson Holliday",
+      "team_name": "Baltimore Orioles",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": "Base"
+      },
+      "print_run": ""
+    },
+    "278": {
+      "card_number": "278",
+      "player_name": "Wyatt Langford",
+      "team_name": "Texas Rangers",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": "Base"
+      },
+      "print_run": ""
+    },
+    "279": {
+      "card_number": "279",
+      "player_name": "Colt Keith",
+      "team_name": "Detroit Tigers",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": "Base"
+      },
+      "print_run": ""
+    },
+    "282": {
+      "card_number": "282",
+      "player_name": "Paul Skenes",
+      "team_name": "Pittsburgh Pirates",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": "Base"
+      },
+      "print_run": ""
+    },
+    "298": {
+      "card_number": "298",
+      "player_name": "Jared Jones",
+      "team_name": "Pittsburgh Pirates",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": "Base"
+      },
+      "print_run": ""
+    },
+    "301": {
+      "card_number": "301",
+      "player_name": "DJ LeMahieu",
+      "team_name": "New York Yankees",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": "Base"
+      },
+      "print_run": ""
+    },
+    "302": {
+      "card_number": "302",
+      "player_name": "Tim Anderson",
+      "team_name": "Miami Marlins",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": "Base"
+      },
+      "print_run": ""
+    },
+    "303": {
+      "card_number": "303",
+      "player_name": "Hunter Greene",
+      "team_name": "Cincinnati Reds",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": "Base"
+      },
+      "print_run": ""
+    },
+    "304": {
+      "card_number": "304",
+      "player_name": "Joe Musgrove",
+      "team_name": "San Diego Padres",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": "Base"
+      },
+      "print_run": ""
+    },
+    "305": {
+      "card_number": "305",
+      "player_name": "Joc Pederson",
+      "team_name": "Arizona Diamondbacks",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": "Base"
+      },
+      "print_run": ""
+    },
+    "306": {
+      "card_number": "306",
+      "player_name": "Kyle Schwarber",
+      "team_name": "Philadelphia Phillies",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": "Base"
+      },
+      "print_run": ""
+    },
+    "307": {
+      "card_number": "307",
+      "player_name": "Rafael Palmeiro",
+      "team_name": "Texas Rangers",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": "Base"
+      },
+      "print_run": ""
+    },
+    "308": {
+      "card_number": "308",
+      "player_name": "Paul Blackburn",
+      "team_name": "Oakland Athletics",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": "Base"
+      },
+      "print_run": ""
+    },
+    "309": {
+      "card_number": "309",
+      "player_name": "Patrick Wisdom",
+      "team_name": "Chicago Cubs",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": "Base"
+      },
+      "print_run": ""
+    },
+    "310": {
+      "card_number": "310",
+      "player_name": "Carlos Rodón",
+      "team_name": "New York Yankees",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": "Base"
+      },
+      "print_run": ""
+    },
+    "311": {
+      "card_number": "311",
+      "player_name": "Juan Gonzalez",
+      "team_name": "Texas Rangers",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": "Base"
+      },
+      "print_run": ""
+    },
+    "312": {
+      "card_number": "312",
+      "player_name": "Sandy Koufax",
+      "team_name": "Brooklyn Dodgers",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": "Base"
+      },
+      "print_run": ""
+    },
+    "313": {
+      "card_number": "313",
+      "player_name": "Edgar Martinez",
+      "team_name": "Seattle Mariners",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": "Base"
+      },
+      "print_run": ""
+    },
+    "314": {
+      "card_number": "314",
+      "player_name": "Will Smith",
+      "team_name": "Los Angeles Dodgers",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": "Base"
+      },
+      "print_run": ""
+    },
+    "315": {
+      "card_number": "315",
+      "player_name": "Willie McCovey",
+      "team_name": "San Francisco Giants",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": "Base"
+      },
+      "print_run": ""
+    },
+    "316": {
+      "card_number": "316",
+      "player_name": "Dick Allen",
+      "team_name": "chicago White Sox",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": "Base"
+      },
+      "print_run": ""
+    },
+    "317": {
+      "card_number": "317",
+      "player_name": "Craig Biggio",
+      "team_name": "Houston Astros",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": "Base"
+      },
+      "print_run": ""
+    },
+    "318": {
+      "card_number": "318",
+      "player_name": "Starling Marte",
+      "team_name": "New York Mets",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": "Base"
+      },
+      "print_run": ""
+    },
+    "319": {
+      "card_number": "319",
+      "player_name": "Nestor Cortes",
+      "team_name": "New York Yankees",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": "Base"
+      },
+      "print_run": ""
+    },
+    "320": {
+      "card_number": "320",
+      "player_name": "Alex Bregman",
+      "team_name": "Houston Astros",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": "Base"
+      },
+      "print_run": ""
+    },
+    "321": {
+      "card_number": "321",
+      "player_name": "Pablo López",
+      "team_name": "Minnesota Twins",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": "Base"
+      },
+      "print_run": ""
+    },
+    "322": {
+      "card_number": "322",
+      "player_name": "Tony Oliva",
+      "team_name": "Minnesota Twins",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": "Base"
+      },
+      "print_run": ""
+    },
+    "323": {
+      "card_number": "323",
+      "player_name": "Fred McGriff",
+      "team_name": "Atlanta Braves",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": "Base"
+      },
+      "print_run": ""
+    },
+    "324": {
+      "card_number": "324",
+      "player_name": "Brady Singer",
+      "team_name": "Kansas City Royals",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": "Base"
+      },
+      "print_run": ""
+    },
+    "325": {
+      "card_number": "325",
+      "player_name": "Matt Strahm",
+      "team_name": "Philadelphia Phillies",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": "Base"
+      },
+      "print_run": ""
+    },
+    "326": {
+      "card_number": "326",
+      "player_name": "Larry Walker",
+      "team_name": "Colorado Rockies",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": "Base"
+      },
+      "print_run": ""
+    },
+    "327": {
+      "card_number": "327",
+      "player_name": "Rollie Fingers",
+      "team_name": "Oakland Athletics",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": "Base"
+      },
+      "print_run": ""
+    },
+    "328": {
+      "card_number": "328",
+      "player_name": "Ryan Mountcastle",
+      "team_name": "Baltimore Orioles",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": "Base"
+      },
+      "print_run": ""
+    },
+    "329": {
+      "card_number": "329",
+      "player_name": "Jorge Polanco",
+      "team_name": "Seattle Mariners",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": "Base"
+      },
+      "print_run": ""
+    },
+    "330": {
+      "card_number": "330",
+      "player_name": "Eric Davis",
+      "team_name": "Cincinnati Reds",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": "Base"
+      },
+      "print_run": ""
+    },
+    "331": {
+      "card_number": "331",
+      "player_name": "Lou Brock",
+      "team_name": "St. Louis Cardinals",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": "Base"
+      },
+      "print_run": ""
+    },
+    "332": {
+      "card_number": "332",
+      "player_name": "Willie Stargell",
+      "team_name": "Pittsburgh Pirates",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": "Base"
+      },
+      "print_run": ""
+    },
+    "333": {
+      "card_number": "333",
+      "player_name": "Jonathan India",
+      "team_name": "Cincinnati Reds",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": "Base"
+      },
+      "print_run": ""
+    },
+    "334": {
+      "card_number": "334",
+      "player_name": "Aaron Nola",
+      "team_name": "Philadelphia Phillies",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": "Base"
+      },
+      "print_run": ""
+    },
+    "335": {
+      "card_number": "335",
+      "player_name": "Tom Glavine",
+      "team_name": "New York Mets",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": "Base"
+      },
+      "print_run": ""
+    },
+    "336": {
+      "card_number": "336",
+      "player_name": "Tim Raines",
+      "team_name": "Montréal Expos",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": "Base"
+      },
+      "print_run": ""
+    },
+    "337": {
+      "card_number": "337",
+      "player_name": "Paul O'Neill",
+      "team_name": "New York Yankees",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": "Base"
+      },
+      "print_run": ""
+    },
+    "338": {
+      "card_number": "338",
+      "player_name": "Harold Baines",
+      "team_name": "chicago White Sox",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": "Base"
+      },
+      "print_run": ""
+    },
+    "339": {
+      "card_number": "339",
+      "player_name": "Jeff Bagwell",
+      "team_name": "Houston Astros",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": "Base"
+      },
+      "print_run": ""
+    },
+    "340": {
+      "card_number": "340",
+      "player_name": "Eddie Murray",
+      "team_name": "Baltimore Orioles",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": "Base"
+      },
+      "print_run": ""
+    },
+    "341": {
+      "card_number": "341",
+      "player_name": "Shane Bieber",
+      "team_name": "Cleveland Guardians",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": "Base"
+      },
+      "print_run": ""
+    },
+    "342": {
+      "card_number": "342",
+      "player_name": "Willy Adames",
+      "team_name": "Milwaukee Brewers",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": "Base"
+      },
+      "print_run": ""
+    },
+    "343": {
+      "card_number": "343",
+      "player_name": "Ozzie Smith",
+      "team_name": "St. Louis Cardinals",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": "Base"
+      },
+      "print_run": ""
+    },
+    "344": {
+      "card_number": "344",
+      "player_name": "Maikel Garcia",
+      "team_name": "Kansas City Royals",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": "Base"
+      },
+      "print_run": ""
+    },
+    "345": {
+      "card_number": "345",
+      "player_name": "Matt Wallner",
+      "team_name": "Minnesota Twins",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": "Base"
+      },
+      "print_run": ""
+    },
+    "346": {
+      "card_number": "346",
+      "player_name": "John Kruk",
+      "team_name": "Philadelphia Phillies",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": "Base"
+      },
+      "print_run": ""
+    },
+    "347": {
+      "card_number": "347",
+      "player_name": "Kent Hrbek",
+      "team_name": "Minnesota Twins",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": "Base"
+      },
+      "print_run": ""
+    },
+    "348": {
+      "card_number": "348",
+      "player_name": "Jack Flaherty",
+      "team_name": "Detroit Tigers",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": "Base"
+      },
+      "print_run": ""
+    },
+    "349": {
+      "card_number": "349",
+      "player_name": "Andruw Jones",
+      "team_name": "Atlanta Braves",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": "Base"
+      },
+      "print_run": ""
+    },
+    "350": {
+      "card_number": "350",
+      "player_name": "Johnny Bench",
+      "team_name": "Cincinnati Reds",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": "Base"
+      },
+      "print_run": ""
+    },
+    "2023 World Series Champion Mini": {
+      "card_number": "2023 World Series Champion Mini",
+      "player_name": "23WS-20",
+      "team_name": "Chris Stratton",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": null
+      },
+      "note": "Texas Rangers"
+    },
+    "50 States Mini": {
+      "card_number": "50 States Mini",
+      "player_name": "50S-50",
+      "team_name": "Wyoming",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": null
+      },
+      "note": ""
+    },
+    "Allen & Ginter Boxloader": {
+      "card_number": "Allen & Ginter Boxloader",
+      "player_name": "AGBL-15",
+      "team_name": "Bryce Harper",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": null
+      },
+      "note": "Philadelphia Phillies"
+    },
+    "Allen & Ginter Boxloader Autographs": {
+      "card_number": "Allen & Ginter Boxloader Autographs",
+      "player_name": "BA-WB",
+      "team_name": "Wade Boggs",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": null
+      },
+      "note": "Boston Red Sox"
+    },
+    "Allen & Ginter Relics A": {
+      "card_number": "Allen & Ginter Relics A",
+      "player_name": "AGR-YA",
+      "team_name": "Yordan Alvarez",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": null
+      },
+      "note": "Houston Astros"
+    },
+    "Allen & Ginter Relics B": {
+      "card_number": "Allen & Ginter Relics B",
+      "player_name": "AGR-ZGA",
+      "team_name": "Zac Gallen",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": null
+      },
+      "note": "Arizona Diamondbacks"
+    },
+    "Autographed Lineup Card Relics": {
+      "card_number": "Autographed Lineup Card Relics",
+      "player_name": "ALCR-ZN",
+      "team_name": "Zach Neto",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": null
+      },
+      "note": "Los Angeles Angels"
+    },
+    "Autographed Relic Books": {
+      "card_number": "Autographed Relic Books",
+      "player_name": "ARBC-XB",
+      "team_name": "Xander Bogaerts",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": null
+      },
+      "note": "San Diego Padres"
+    },
+    "Ballpark Bites Boxloader": {
+      "card_number": "Ballpark Bites Boxloader",
+      "player_name": "BPBB-30",
+      "team_name": "Steak Sandwich",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": null
+      },
+      "note": ""
+    },
+    "Ballpark Bites Mini": {
+      "card_number": "Ballpark Bites Mini",
+      "player_name": "BB-30",
+      "team_name": "Steak Sandwich",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": null
+      },
+      "note": ""
+    },
+    "Batoids Beneath Mini": {
+      "card_number": "Batoids Beneath Mini",
+      "player_name": "RITW-10",
+      "team_name": "Shark Ray",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": null
+      },
+      "note": ""
+    },
+    "Buzzin'": {
+      "card_number": "Buzzin'",
+      "player_name": "BUZ-15",
+      "team_name": "Hornet",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": null
+      },
+      "note": ""
+    },
+    "Chrome": {
+      "card_number": "Chrome",
+      "player_name": "312",
+      "team_name": "Sandy Koufax",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": null
+      },
+      "note": "Brooklyn Dodgers"
+    },
+    "Chrome Mini": {
+      "card_number": "Chrome Mini",
+      "player_name": "312",
+      "team_name": "Sandy Koufax",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": null
+      },
+      "note": "Brooklyn Dodgers"
+    },
+    "Cloth Mini": {
+      "card_number": "Cloth Mini",
+      "player_name": "282",
+      "team_name": "Paul Skenes",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": null
+      },
+      "note": "Pittsburgh Pirates"
+    },
+    "Cut Signatures": {
+      "card_number": "Cut Signatures",
+      "player_name": "CS-YB",
+      "team_name": "Yogi Berra",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": null
+      },
+      "note": "New York Yankees"
+    },
+    "Cycle Succession": {
+      "card_number": "Cycle Succession",
+      "player_name": "CS-50",
+      "team_name": "Jose Altuve",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": null
+      },
+      "note": "Houston Astros"
+    },
+    "Dual Autographed Relic Books": {
+      "card_number": "Dual Autographed Relic Books",
+      "player_name": "DARBC-YY",
+      "team_name": "Christian Yelich / Robin Yount",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": null
+      },
+      "note": "Milwaukee Brewers"
+    },
+    "Dual Autographs": {
+      "card_number": "Dual Autographs",
+      "player_name": "DAC-TS",
+      "team_name": "Dansby Swanson / Mallory Swanson",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": null
+      },
+      "note": "Chicago Cubs"
+    },
+    "Flags of the World Mini": {
+      "card_number": "Flags of the World Mini",
+      "player_name": "FOTW-50",
+      "team_name": "Nigeria",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": null
+      },
+      "note": ""
+    },
+    "Full-Size Autographs": {
+      "card_number": "Full-Size Autographs",
+      "player_name": "FSAC-WL",
+      "team_name": "Wyatt Langford",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": null
+      },
+      "note": "Texas Rangers"
+    },
+    "Got the Itch Mini": {
+      "card_number": "Got the Itch Mini",
+      "player_name": "GTI-20",
+      "team_name": "Peppermint",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": null
+      },
+      "note": ""
+    },
+    "In Action Variations": {
+      "card_number": "In Action Variations",
+      "player_name": "IA-50",
+      "team_name": "Mike Trout",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": null
+      },
+      "note": "Los Angeles Angels"
+    },
+    "Lineup Card Relics": {
+      "card_number": "Lineup Card Relics",
+      "player_name": "LRC-ZW",
+      "team_name": "Zack Wheeler",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": null
+      },
+      "note": "Philadelphia Phillies"
+    },
+    "Metal Mini": {
+      "card_number": "Metal Mini",
+      "player_name": "280",
+      "team_name": "Mike Trout",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": null
+      },
+      "note": "Los Angeles Angels"
+    },
+    "Mini Artist Originals": {
+      "card_number": "Mini Artist Originals",
+      "player_name": "AR-32",
+      "team_name": "Jackson Holliday",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": null
+      },
+      "note": "Baltimore Orioles"
+    },
+    "Mini Baseball Autographs": {
+      "card_number": "Mini Baseball Autographs",
+      "player_name": "MA-ZR",
+      "team_name": "Zach Remillard",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": null
+      },
+      "note": "Chicago White Sox"
+    },
+    "Mini DNA Relics": {
+      "card_number": "Mini DNA Relics",
+      "player_name": "DNAR-TR",
+      "team_name": "Triceratops",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": null
+      },
+      "note": ""
+    },
+    "Mini Employee Autographs": {
+      "card_number": "Mini Employee Autographs",
+      "player_name": "MEA-WEL",
+      "team_name": "Wes Elliott",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": null
+      },
+      "note": ""
+    },
+    "Mini Exclusives": {
+      "card_number": "Mini Exclusives",
+      "player_name": "400",
+      "team_name": "Julio Rodríguez",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": null
+      },
+      "note": "Seattle Mariners"
+    },
+    "Mini Framed Relics": {
+      "card_number": "Mini Framed Relics",
+      "player_name": "MFR-ZG",
+      "team_name": "Zack Gelof",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": null
+      },
+      "note": "Oakland Athletics"
+    },
+    "Mini Non-Baseball Autographs": {
+      "card_number": "Mini Non-Baseball Autographs",
+      "player_name": "MA-ZR",
+      "team_name": "Zaccharie Risacher",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": null
+      },
+      "note": ""
+    },
+    "N43 Boxloader Autographs": {
+      "card_number": "N43 Boxloader Autographs",
+      "player_name": "N43A-VG",
+      "team_name": "Vladimir Guerrero Jr.",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": null
+      },
+      "note": "Toronto Blue Jays"
+    },
+    "N43 Boxloaders": {
+      "card_number": "N43 Boxloaders",
+      "player_name": "N43-20",
+      "team_name": "Francisco Lindor",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": null
+      },
+      "note": "New York Mets"
+    },
+    "Quad Autographs": {
+      "card_number": "Quad Autographs",
+      "player_name": "QAC-THR",
+      "team_name": "Teppei Teranishi / Riley Breckenridge / Dustin Kensrue / Eddie Breckenridge",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": null
+      },
+      "note": ""
+    },
+    "Relic Cut Signatures": {
+      "card_number": "Relic Cut Signatures",
+      "player_name": "RCS-YB",
+      "team_name": "Yogi Berra",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": null
+      },
+      "note": "New York Yankees"
+    },
+    "Rookie Design Variations Mini": {
+      "card_number": "Rookie Design Variations Mini",
+      "player_name": "RD-20",
+      "team_name": "Wyatt Langford",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": null
+      },
+      "note": "Texas Rangers"
+    },
+    "Sister, Sister": {
+      "card_number": "Sister, Sister",
+      "player_name": "SS-20",
+      "team_name": "Vilnius, Lithuania / Madison, United States",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": null
+      },
+      "note": ""
+    },
+    "Stained Glass Mini": {
+      "card_number": "Stained Glass Mini",
+      "player_name": "280",
+      "team_name": "Mike Trout",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": null
+      },
+      "note": "Los Angeles Angels"
+    },
+    "Swamp Creatures Mini": {
+      "card_number": "Swamp Creatures Mini",
+      "player_name": "SC-30",
+      "team_name": "Lubber Grasshopper",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": null
+      },
+      "note": ""
+    },
+    "Uniform Countdown Mini": {
+      "card_number": "Uniform Countdown Mini",
+      "player_name": "UC-20",
+      "team_name": "Mike Schmidt",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": null
+      },
+      "note": "Philadelphia Phillies"
+    },
+    "World's Tallest Mountains Mini": {
+      "card_number": "World's Tallest Mountains Mini",
+      "player_name": "WTM-15",
+      "team_name": "Gyachung Kang",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": null
+      },
+      "note": ""
+    },
+    "X-Rayd": {
+      "card_number": "X-Rayd",
+      "player_name": "XR-20",
+      "team_name": "Speke's Gazelle",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": null
+      },
+      "note": ""
+    },
+    "z": {
+      "card_number": "z",
+      "player_name": "RCS-BD",
+      "team_name": "Bobby Doerr",
+      "subset": {
+        "source": "Beckett",
+        "set_name": "Allen & Ginter",
+        "year": 2024,
+        "brand": "Topps",
+        "type": "Baseball",
+        "subset_name": null
+      },
+      "note": "Boston Red Sox"
+    }
+  },
+  "parallels": {}
+}

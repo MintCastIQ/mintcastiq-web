@@ -63,3 +63,8 @@ repo-healthcheck.py
 # Ignore MintCastIQ session SQL dumps
 mintcastiq*.sql
 mintcastiq*.sq
+
+# Github
+.github/copilot_instructions.md
+.github/copilot-instructions.md
+

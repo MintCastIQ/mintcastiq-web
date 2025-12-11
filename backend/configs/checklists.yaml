@@ -1,0 +1,106 @@
+defaults:
+  columns:
+    cards:
+      0: card_number
+      1: player_name
+      2: team_name
+      3: print_run
+    subset:
+      0: subset_name
+    parallel:
+      0: parallel_name
+
+2024-Panini-Select-Football-Checklist:
+  meta:
+    sport: Football
+    year: 2024
+    brand: Panini
+    set_name: Select
+    source_file: 2024-Panini-Select-Football-Checklist.xlsx
+    last_modified: "2024-09-15T12:34:56Z"
+    columns:
+      cards:
+        0: card_number
+        1: player_name
+        2: team_name
+        3: print_run
+      subset:
+        0: subset_name
+      parallel:
+        0: parallel_name
+    checksum: "sha256:sbfe6aac71f6763ccfb707e04d1749f30ab9e02781854a37e812c048e0bf9f5d0"
+  column_sets:
+    with_subset_skip4:
+      0: subset_name
+      1: card_number
+      2: player_name
+      3: team_name
+      5: print_run
+    with_subset:
+      0: subset_name
+      1: card_number
+      2: player_name
+      3: team_name
+      4: print_run
+  sheets:
+    0:
+      name: Base
+    1:
+      name: Autographs
+    2:
+      name: Memorabilia
+    3:
+      name: Inserts
+    4:
+      name: XRC Redemptions
+    5:
+      name: Teams
+      columns: with_subset_skip4
+      intentional_gaps:
+        - 4
+    6:
+      name: Master Checklist
+      columns: with_subset
+
+2024-Panini-Illusions-Football-Checklist:
+  meta:
+    sport: Football
+    year: 2024
+    brand: Panini
+    set_name: Illusions
+    source_file: 2024-Panini-Illusions-Football-Checklist.xlsx
+    last_modified: "2024-09-20T08:00:00Z"
+    columns:
+      0: card_number
+      1: player_name
+      2: team_name
+      3: print_run
+    checksum: "sha256:0dee7196dff5638f957ceab29d09c6f898b0aca1e4a3c865d22dd3ca8dc0c3a1"
+  column_sets:
+    with_subset:
+      0: subset_name
+      1: card_number
+      2: player_name
+      3: team_name
+      4: print_run
+    with_subset_team_focus:
+      0: team_name
+      1: subset_name
+      2: card_number
+      3: player_name
+      4: print_run
+  sheets:
+    0:
+      name: Base
+    1:
+      name: Autographs
+    2:
+      name: Memorabilia
+    3:
+      name: Inserts
+    4:
+      name: Teams
+      columns: with_subset_team_focus
+    5:
+      name: Master
+      columns: with_subset

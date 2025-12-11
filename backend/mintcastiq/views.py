@@ -1,8 +1,8 @@
 # views.py
 from rest_framework import viewsets
-from .models import DimCard
-from .serializers import DimCardSerializer
+from mintcastiq.models import DimCard
+from mintcastiq.serializers import serialize_for_hash
 
 class DimCardViewSet(viewsets.ModelViewSet):
     queryset = DimCard.objects.all()
-    serializer_class = DimCardSerializer
+    
