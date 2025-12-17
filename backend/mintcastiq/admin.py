@@ -1,6 +1,7 @@
 from django.contrib import admin
 from django.utils.html import format_html
-from .models import DimGrade, ChecklistUpload
+from .models.dim_grade import DimGrade 
+from .models.checklist_upload import ChecklistUpload
 from django.conf import settings
 from domain.services.checklist_service import ingest_checklist
 

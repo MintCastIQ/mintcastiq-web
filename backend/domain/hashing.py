@@ -2,6 +2,7 @@
 import argparse
 import hashlib
 import os
+from mintcastiq.serializers import serialize_for_hash
 
 def hash_string(input_string: str, algorithm: str = "sha256") -> str:
     """Return the hash of the input string using the chosen algorithm."""
@@ -16,6 +17,16 @@ def hash_file(filepath: str, algorithm: str = "sha256") -> str:
         for chunk in iter(lambda: f.read(4096), b""):
             h.update(chunk)
     return h.hexdigest()
+
+def hash_object(instance) -> str:
+    """
+    Generate a stable hash string for a Django model instance.
+    Uses the serialize_for_hash function to get a JSON representation.
+    """
+    json_str = serialize_for_hash(instance)
+    print("HASH PAYLOAD:", json_str)
+    return hashlib.sha256(json_str.encode("utf-8")).hexdigest()
+
 
 def main():
     parser = argparse.ArgumentParser(description="Hash a string or file contents.")

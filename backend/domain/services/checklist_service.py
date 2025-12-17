@@ -1,6 +1,7 @@
 import json
-from mintcastiq.models import DimSet, DimCard, DimParallel
-
+from mintcastiq.models import dim_set
+from mintcastiq.models.dim_card import DimCard
+from mintcastiq.models.dim_parallel import DimParallel
 def ingest_checklist(file_path):
     with open(file_path, "r", encoding="utf-8") as f:
         data = json.load(f)

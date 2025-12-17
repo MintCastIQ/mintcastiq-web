@@ -1,6 +1,5 @@
 # utils.py
 from django.db import models
-from mintcastiq.models import DimCardHash
 from collections import defaultdict
 
 
