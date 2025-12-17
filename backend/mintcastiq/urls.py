@@ -4,7 +4,7 @@ from rest_framework import routers
 from .views import DimCardViewSet
 
 router = routers.DefaultRouter()
-router.register(r'dimcards', DimCardViewSet)
+# router.register(r'dimcards', DimCardViewSet)
 
 urlpatterns = [
     path("admin/", admin.site.urls),

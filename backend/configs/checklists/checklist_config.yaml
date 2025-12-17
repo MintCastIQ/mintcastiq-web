@@ -1,0 +1,61 @@
+defaults:
+  columns:
+    master:
+      0: subset_name
+      1: card_number
+      2: player_name
+      3: team_name
+      4: print_run
+    cards:
+      0: card_number
+      1: player_name
+      2: team_name
+      3: print_run
+    subset:
+      0: subset_name
+    parallel:
+      0: parallel_name
+
+2024-Panini-Select-Football-Checklist:
+  meta:
+    sport: Football
+    year: 2024
+    brand: Panini
+    set_name: Select
+    source_file: 2024-Panini-Select-Football-Checklist.xlsx
+    last_modified: "2024-09-15T12:34:56Z"
+    columns:
+      cards:
+        0: card_number
+        1: player_name
+        2: team_name
+        3: print_run
+      subset:
+        0: subset_name
+      parallel:
+        0: parallel_name
+    
+  column_sets:
+    with_subset_skip_4:
+      0: subset_name
+      1: card_number
+      2: player_name
+      3: team_name
+      5: print_run
+
+  sheets:
+    0:
+      name: Base
+    1:
+      name: Autographs
+    2:
+      name: Memorabilia
+    3:
+      name: Inserts
+    4:
+      name: XRC Redemptions
+    5:
+      name: Teams
+      columns: with_subset_skip_4  
+    6:
+      name: "Master Checklist"
