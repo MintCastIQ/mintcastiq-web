@@ -1,3 +1,6 @@
+from django.db import models
+from mintcastiq.models.dim_users import DimUsers   
+
 class StagedInventory(models.Model):
     user = models.ForeignKey(DimUsers, null=True, on_delete=models.SET_NULL)
 

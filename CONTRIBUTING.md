@@ -1,88 +1,130 @@
-
----
-
-## 🤝 CONTRIBUTING.md (Detailed Git Flow)
-
 # Contributing to MintCastIQ
 
-We welcome contributors! Please follow these guidelines:
+MintCastIQ welcomes contributors who value clarity, reproducibility, and audit‑grade workflows. This guide outlines how to collaborate safely and effectively.
 
-## Workflow
-### Fork and clone the repo:
+
+## 🧭 Workflow Overview
+### 1. Fork and clone the repository
+External contributors should fork; collaborators may clone directly.
+
 ```bash
 git clone https://github.com/MintCastIQ/mintcastiq-web.git
 cd mintcastiq-web
+```
+### 2. Create a feature branch from develop
+```bash
 git checkout develop
-git checkout -b feature_branch_name
+git checkout -b feature/<short-descriptor>
 ```
+Branches should be:
+- short‑lived
+- purpose‑specific
+- named clearly (feature/otp-service, bugfix/session-migration)
 
-### Make changes in one module at a time (sections/, components/, or backend/).
-Run tests
+### 3. Make focused changes
+- Work on one logical unit at a time. 
+- Keep changes isolated to a module or service when possible.
 
+### 4. Run tests
+All changes must pass the test suite before opening a PR.
 
-### Commit with clear messages:
 ```bash
-git commit -m "feat: add checklist section"
+pytest
 ```
-### Push and open a pull request:
+### 5. Commit with clear, contributor‑safe messages
 ```bash
-git push origin feature/my-feature
+git commit -m "feat: implement OTP hashing service"
 ```
-## 📦 Pull Requests
-- Open a PR against `develop`.
-- Include:
-  - A summary of changes.
-  - Screenshots or demos if UI‑related.
-  - Notes on testing and validation.
-- Expect review feedback — clarity and reproducibility are prioritized.
----
-## 👥 Contributor Types (Code)
-- **External contributors (not added to repo)**:
-  - Fork the repository, make changes, and open pull requests.
-  - Can open issues in public repos but cannot be formally assigned to them.
-- **Collaborators (added to repo)**:
-  - Invited by maintainers via repo settings.
-  - Can push branches directly, manage issues, and assign themselves or others.
-- **Maintainers**:
-  - Review pull requests, merge changes, and manage roadmap alignment.
-  - Responsible for enforcing audit‑grade clarity and contributor safety.
----
-## Code Standards
-- Logging: Explicit logging for audit‑grade clarity.
-- Naming: Descriptive, contributor‑safe names.
+### 6. Push and open a pull request
+```bash
+git push -u origin feature/<short-descriptor>
+```
+### Open a PR against develop, not main.
 
-## Git Hygiene
-Ignore node_modules/, logs/, webvenv/, __pycache__/.
+## 📦 Pull Request Expectations
+Every PR must include:
+- Summary of changes
+- Reasoning (why this change exists)
+- Testing notes (what you validated)
+- Screenshots if UI‑related
+- Migration notes if schema changes occurred
 
-Tag milestones clearly:
+PRs are reviewed for:
+- clarity
+- reproducibility
+- contributor safety
+- architectural alignment
+
+### Expect feedback — this is a forensic‑grade project, not a “just merge it” repo.
+
+## 👥 Contributor Roles
+### External Contributors
+- Work from forks
+- Open PRs to develop
+- Can open issues but cannot be assigned to them
+
+### Collaborators
+- Added by maintainers
+- Can push branches directly
+- Can manage issues and self‑assign work
+
+### Maintainers
+- Review and merge PRs
+- Enforce audit‑grade clarity
+- Maintain roadmap alignment
+- Ensure contributor safety and documentation quality
+
+## 🧹 Git Hygiene
+- Never commit secrets, credentials, or personal data
+- Ignore generated or local‑only files:
+```Code
+node_modules/
+logs/
+webvenv/
+__pycache__/
+```
+## Tag milestones clearly:
+
 ```bash
 git tag -a v0.1.0 -m "Initial migration"
 git push origin v0.1.0
 ```
-## 🌐 Project Scope
-- **Web app**: Primary focus. Built with Django
-- **Mobile companion**: Planned for later, will reuse web APIs and design principles.
-- **Audit‑grade clarity**: Every contribution should be reproducible, documented, and contributor‑safe.
-## 🛠 Development Standards
-- **Code style**: 
-- **Documentation**:
-  - Update `README.md` if your change affects usage.
-  - Add notes to `DEVELOPMENT_GUIDE.md` for architectural or workflow changes.
-- **Testing**:
-  - Write unit tests for new features.
-  - Ensure existing tests pass 
----
+## 🛠 Code & Development Standards
+### Code Style
+- Prefer explicitness over cleverness
+- Use descriptive, contributor‑safe names
+- Log intentionally for audit clarity
+
+## Documentation
+- Update README.md if usage changes
+- Update DEVELOPMENT_GUIDE.md for architectural or workflow changes
+- Document new services, models, or ingest behaviors
+
+## Testing
+- Add tests for new features
+- Ensure all existing tests pass
+- Avoid merging untested logic
+
 ## 🔒 Contributor Safety
-- No secrets, credentials, or personal data in commits.
-- Use environment variables for sensitive configs.
-- Respect privacy guidelines outlined in `PRIVACY.md`.
+- MintCastIQ is designed to be contributor‑safe and privacy‑respecting.
+- Never commit personal data
+- Never commit secrets or API keys
+- Use environment variables for sensitive configuration
+- Follow the guidelines in PRIVACY.md
+
+## 🌐 Project Scope
+- Web app: Primary focus (Django + DRF)
+- Mobile companion: Planned, but secondary
+- Audit‑grade clarity: Every contribution must be reproducible and traceable
 
 ## 🚀 Roadmap Alignment
-- Contributions should align with the **web‑first roadmap**.
-- Mobile features are welcome if scoped as companion modules, not primary focus.
-- If unsure, open a **Discussion** or **Issue** before coding.
----
+### Before starting major work:
+- Open an Issue or Discussion
+- Confirm alignment with the web‑first roadmap
+- Avoid speculative or unscoped features
+
 ## 🤝 Community Standards
-- Be explicit, respectful, and clear in communication.
-- Document architectural decisions for future contributors.
-- Follow the project’s branding and ergonomic guidelines.
+- Communicate clearly and respectfully
+- Document architectural decisions
+- Follow project branding and ergonomic guidelines
+- Help maintain a welcoming, contributor‑safe environment

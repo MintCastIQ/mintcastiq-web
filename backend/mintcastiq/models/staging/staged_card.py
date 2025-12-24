@@ -1,3 +1,7 @@
+from django.db import models
+from mintcastiq.models.dim_set import DimSet
+from mintcastiq.models.dim_parallel import DimParallel
+
 class StagedCard(models.Model):
     # Nullable FKs
     cardset = models.ForeignKey(DimSet, null=True, on_delete=models.SET_NULL)
