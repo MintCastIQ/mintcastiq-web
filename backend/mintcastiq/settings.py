@@ -28,6 +28,7 @@ INSTALLED_APPS = [
 
     # Your apps
     'mintcastiq',   # replace with your actual app name
+    'domain.ingest.apps.IngestConfig',
     'rest_framework'
 ]
 

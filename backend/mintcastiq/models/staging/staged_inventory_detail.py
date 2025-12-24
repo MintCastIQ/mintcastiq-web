@@ -1,3 +1,9 @@
+from django.db import models
+from mintcastiq.models.fact_inventory import FactInventory
+from mintcastiq.models.fact_player_master import FactPlayerMaster
+from mintcastiq.models.fact_team_master import FactTeamMaster
+from mintcastiq.models.dim_grade import DimGrade
+
 class StagedInventoryDetail(models.Model):
     # Nullable FKs
     inventory = models.ForeignKey(FactInventory, null=True, on_delete=models.SET_NULL)

@@ -11,7 +11,7 @@ Responsibilities:
 """
 
 from django.db import transaction, models
-from mintcastiq.models import DimCard, DimCardHash, HashPosition
+from mintcastiq.models import DimCard
 from  domain.utils import next_hash_run  # utility function you moved earlier
 
 
@@ -32,12 +32,14 @@ def hash_run(card, hash_values):
 
     # Ensure atomic insert of all 10 hashes
     with transaction.atomic():
-        for pos, value in hash_values.items():
-            DimCardHash.objects.create(
-                card=card,
-                hash_position=pos,
-                hash_value=value.strip(),
-                hash_run=run_id
-            )
+        # TODO: Validate pos is a valid HashPosition
 
-    return run_id
+        return run_id
+
+def ScanIngestService(directory_path):
+    """
+    Placeholder for scan ingest service.
+    Would handle reading image files, computing hashes,
+    and calling `hash_run` for each card scan.
+    """
+    pass  # Implementation would go here    

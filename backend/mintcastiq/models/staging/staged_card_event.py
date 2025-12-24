@@ -1,3 +1,9 @@
+from django.db import models
+from mintcastiq.models.dim_card import DimCard
+from mintcastiq.models.dim_users import DimUsers
+from mintcastiq.models.dim_set import DimSet
+from mintcastiq.models.dim_grade import DimGrade
+
 class StagedCardEvent(models.Model):
     card = models.ForeignKey(DimCard, null=True, on_delete=models.SET_NULL)
     user = models.ForeignKey(DimUsers, null=True, on_delete=models.SET_NULL)

@@ -39,6 +39,19 @@ from .fact_team_master import FactTeamMaster
 from .fact_users_otp import FactUsersOTP
 
 # -----------------------------
+# Import Staging Models
+# -----------------------------
+from .staging.staged_bridge_player_team import StagedPlayerTeam
+from .staging.staged_card_event import StagedCardEvent
+from .staging.staged_card import StagedCard
+from .staging.staged_inventory_detail import StagedInventoryDetail
+from .staging.staged_inventory import StagedInventory
+from .staging.staged_parallel import StagedParallel
+from .staging.staged_player_master import StagedPlayerMaster
+from .staging.staged_set import StagedSet
+from .staging.staged_team_master import StagedTeamMaster
+
+# -----------------------------
 # Import Helper Models
 # -----------------------------
 from .bridge_player_team import BridgePlayerTeam
@@ -47,12 +60,17 @@ from .bridge_player_team import BridgePlayerTeam
 # Import Checklist Ingest Models
 # -----------------------------
 from .checklist_upload import ChecklistUpload
+from .staging.staging_checklist_row import StagingChecklistRow
+from .fact_checklist_entry import FactChecklistEntry
 
 __all__ = [
     "DimSet", "DimCard", "DimParallel", "DimGrade", "DimUsers", "FactSessions",
     "DimParallelSet", "DimCardParallel",
     "FactCardEvents", "FactInventory", "FactInventoryDetail",
     "FactPlayerMaster", "FactTeamMaster", "FactUsersOTP",
-    "BridgePlayerTeam", "ChecklistUpload",
-    "BaseIdentity", "SoftDeleteMixin", "ActiveManager"
+    "BridgePlayerTeam", "ChecklistUpload", "StagingChecklistRow", "FactChecklistEntry",
+    "BaseIdentity", "SoftDeleteMixin", "ActiveManager",
+    "StagedPlayerTeam", "StagedCardEvent", "StagedCard",
+    "StagedInventoryDetail", "StagedInventory", "StagedParallel",
+    "StagedPlayerMaster", "StagedSet", "StagedTeamMaster"
 ]
